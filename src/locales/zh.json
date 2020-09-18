@@ -1298,12 +1298,13 @@
             [
                 "span",
                 "*",
-                ""
+                "*"
             ],
             [
                 "input[title]",
                 "Check to enable grid search on this parameter",
-                "",
+                "检查以启用此参数的网格搜索
+",
                 "title"
             ],
             [
@@ -1318,42 +1319,42 @@
             [
                 "span",
                 "Healthy",
-                ""
+                "健康"
             ],
             [
                 "span",
                 "Not healthy",
-                ""
+                "不健康"
             ],
             [
                 "span",
                 "Consensus",
-                ""
+                "一致"
             ],
             [
                 "span",
-                "text-danger No consensus",
-                ""
+                "No consensus",
+                "不一致"
             ],
             [
                 "span",
                 "Locked",
-                ""
+                "已锁定"
             ],
             [
                 "span",
                 "Not locked",
-                ""
+                "未锁定"
             ],
             [
                 "th",
                 "Version",
-                ""
+                "版本"
             ],
             [
                 "th",
                 "Started",
-                ""
+                "已开始"
             ],
             [
                 "th",
@@ -1363,12 +1364,12 @@
             [
                 "h3",
                 "Stop",
-                ""
+                "停止"
             ],
             [
                 "h3",
                 "Refresh",
-                ""
+                "刷新"
             ]
         ]
     },
