@@ -3534,42 +3534,42 @@
             [
                 "h3",
                 "Clipboard",
-                ""
+                "剪贴板"
             ],
             [
                 "h3",
                 "My Clips",
-                ""
+                "我的"
             ],
             [
                 "h3",
                 "You have no clips. To save a clip into this list, click the",
-                ""
+                "您没有剪辑。要将片段保存到此列表中，请单击"
             ],
             [
                 "h3",
                 "&nbsp; paperclip next to the cell.",
-                ""
+                "&nbsp; 单元旁边的回形针。"
             ],
             [
                 "h3",
                 "Click on a clip to insert it into your notebook. Click the",
-                ""
+                "单击一个剪辑将其插入笔记本。点击"
             ],
             [
                 "h3",
                 "&nbsp;button to insert and execute the clip.",
-                ""
+                "&nbsp;按钮插入和执行剪辑。”
             ],
             [
                 "h3",
                 "System",
-                ""
+                "系统"
             ],
             [
                 "h3",
                 "Trash",
-                ""
+                "废弃"
             ]
         ]
     },
@@ -3655,7 +3655,7 @@
             [
                 "span",
                 "STOP",
-                ""
+                "停止"
             ]
         ]
     },
