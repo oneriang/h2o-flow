@@ -45,6 +45,16 @@ exports.init = (_, _renderers) ->
   _about = about.init _
   _dialogs = dialogs.init _
 
+
+  test1 = (nodes)->
+    if flow.l && flow.l['toolbar']
+      for v, i in flow.l['toolbar'].label
+        els = nodes.querySelectorAll(v[0])
+        for v1, i1 in els
+            if v1[v[1]] == v[2] && v[3] != ''
+              v1[v[1]] = v1[v[1]].replace(v[2], v[3])
+              break
+
   # initialize the interpreter when the notebook is created
   # one interpreter is shared by all scala cells
   _initializeInterpreter = ->
@@ -707,7 +717,17 @@ exports.init = (_, _renderers) ->
 
   setupMenus = ->
     _.requestModelBuilders (error, builders) ->
-      _menus initializeMenus if error then [] else builders
+      # _menus initializeMenus if error then [] else builders
+      menus1 = initializeMenus if error then [] else builders
+      menus2 = flow.l['menu']
+      for v, i in menus1
+        if menus2[i]['label'][1] != ''
+          v['label'] = menus2[i]['label'][1]
+        items = v['items']
+        for v1, i1 in items
+          if menus2[i]['items'][i1]['label'][1] != ''
+            v1['label'] = menus2[i]['items'][i1]['label'][1]
+      _menus menus1
 
   createTool = (icon, label, action, isDisabled=no) ->
     label: label
@@ -896,4 +916,5 @@ exports.init = (_, _renderers) ->
     editMode: editModeKeyboardShortcutsHelp
   about: _about
   dialogs: _dialogs
+  test1: test1
   templateOf: (view) -> view.template

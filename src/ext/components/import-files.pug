@@ -1,4 +1,4 @@
-.flow-widget
+.flow-widget(data-bind="descendantsComplete: test, childrenComplete: test1 ")
   h3.flow-hint
     i.fa.fa-files-o
     | Import Files
@@ -70,5 +70,4 @@
           button.flow-button(type='button' data-bind='click:importSelectedFiles, enable:hasSelectedFiles')
             i.fa.fa-cloud-upload
             | Import
-// /ko
 

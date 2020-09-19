@@ -42,6 +42,7 @@ $ ->
   console.debug "Starting Flow"
   getContextPath context
   checkSparklingWater context
+  window.ko = ko
   window.flow = application.init context
   h2oApplication.init context
   ko.applyBindings window.flow

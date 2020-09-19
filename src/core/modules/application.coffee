@@ -19,3 +19,5 @@ exports.init = (_) ->
   sandbox: _sandbox
   view: _notebook
   async: require('./async')
+  l: require('../../locales/zh.json')
+

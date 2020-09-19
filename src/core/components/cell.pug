@@ -18,7 +18,6 @@
           tr
             td.flow-cell-time(data-bind='text:time')
             td.flow-cell-actions
-      // /ko
   .flow-cell-output(data-bind="css:{ 'flow-hide-output': isOutputHidden }")
     // ko if:result
     .flow-cell-result(data-bind='template:{ name: templateOf, data:result }')

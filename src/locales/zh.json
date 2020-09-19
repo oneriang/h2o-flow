@@ -150,7 +150,7 @@
         ],
         [
             "Column with observation weights. Giving some observation a weight of zero is equivalent to excluding it from the dataset; giving an observation a relative weight of 2 is equivalent to repeating that row twice. Negative weights are not allowed. Note: Weights are per-row observation weights and do not increase the size of the data frame. This is typically the number of times a row is repeated, but non-integer values are supported as well. During training, rows with higher weights matter more, due to the larger loss function pre-factor.",
-            "具有观察权重的列。给某个观察值权重为零就等于从数据集中排除它；给出一个相对权重为2的观察值等于将该行重复两次。负负数是不允许的。注意：权重是每行观察权重，不会增加数据帧的大小。这通常是重复行的次数，但是也支持非整数值。在训练期间，由于较大的损失函数因素，具有较高权重的行更为重要。"
+            "具有观察权重的列。给某个观察值权重为零就等于从数据集中排除它；给出一个相对权重为2的观察值等于将该行重复两次。负负数是不允许的。注意:权重是每行观察权重，不会增加数据帧的大小。这通常是重复行的次数，但是也支持非整数值。在训练期间，由于较大的损失函数因素，具有较高权重的行更为重要。"
         ],
         [
             "Offset column. This will be added to the combination of columns before applying the link function.",
@@ -214,7 +214,7 @@
         ],
         [
             "Number of training samples (globally) per MapReduce iteration. Special values are 0: one epoch, -1: all available data (e.g., replicated training data), -2: automatic.",
-            "每个MapReduce迭代的训练样本数量（全局）。特殊值是0：一个时期，-1：所有可用数据（例如，复制的训练数据），-2：自动。"
+            "每个MapReduce迭代的训练样本数量（全局）。特殊值是0:一个时期，-1:所有可用数据（例如，复制的训练数据），-2:自动。"
         ],
         [
             "Adaptive learning rate.",
@@ -262,15 +262,15 @@
         ],
         [
             "Maximum duty cycle fraction for scoring (lower: more training, higher: more scoring).",
-            "得分的最大占空比分数（较低：更多训练，较高：更多得分）。"
+            "得分的最大占空比分数（较低:更多训练，较高:更多得分）。"
         ],
         [
             "Early stopping based on convergence of stopping_metric. Stop if simple moving average of length k of the stopping_metric does not improve for k:=stopping_rounds scoring events (0 to disable)",
-            "根据stopping_metric的收敛提前停止。如果stop_metric的长度为k的简单移动平均线没有针对k：= stopping_rounds得分事件而提高，则停止（0禁用）"
+            "根据stopping_metric的收敛提前停止。如果stop_metric的长度为k的简单移动平均线没有针对k:= stopping_rounds得分事件而提高，则停止（0禁用）"
         ],
         [
             "Metric to use for early stopping (AUTO: logloss for classification, deviance for regression and anonomaly_score for Isolation Forest). Note that custom and custom_increasing can only be used in GBM and DRF with the Python client.",
-            "用于提前停止的度量标准（AUTO：用于分类的对数丢失，用于回归的偏差和对于Isolation Forest的anonomaly_score）。请注意，custom和custom_increasing只能在带有Python客户端的GBM和DRF中使用。"
+            "用于提前停止的度量标准（AUTO:用于分类的对数丢失，用于回归的偏差和对于Isolation Forest的anonomaly_score）。请注意，custom和custom_increasing只能在带有Python客户端的GBM和DRF中使用。"
         ],
         [
             "Relative tolerance for metric-based stopping criterion (stop if relative improvement is not at least this much)",
@@ -302,7 +302,7 @@
         ],
         [
             "Seed for random numbers (affects sampling) - Note: only reproducible when running single threaded.",
-            "随机数的种子（影响采样）-注意：仅在运行单线程时才可重现。"
+            "随机数的种子（影响采样）-注意:仅在运行单线程时才可重现。"
         ],
         [
             "Adaptive learning rate time decay factor (similarity to prior updates).",
@@ -391,6 +391,86 @@
         [
             "Elastic averaging between compute nodes can improve distributed model convergence. #Experimental",
             "计算节点之间的弹性平均可以改善分布式模型的收敛性。 ＃实验性"
+        ],
+        [
+            "This will discard words that appear less than <int> times",
+            "这将丢弃出现次数小于<int>的单词"
+        ],
+        [
+            "The word model to use (SkipGram or CBOW)",
+            "使用的单词模型(SkipGram或CBOW)"
+        ],
+        [
+            "Use Hierarchical Softmax",
+            "使用分层Softmax"
+        ],
+        [
+            "Set size of word vectors",
+            "设置单词向量的大小"
+        ],
+        [
+            "Set max skip length between words",
+            "设置单词之间的最大跳过长度"
+        ],
+        [
+            "Set threshold for occurrence of words. Those that appear with higher frequency in the training data will be randomly down-sampled; useful range is (0, 1e-5)",
+            "设置单词出现的阈值。对训练数据中出现频率较高的部分进行随机降采样;有效范围为(0,1e -5)"
+        ],
+        [
+            "Set the starting learning rate",
+            "设置开始学习率"
+        ],
+        [
+            "Number of training iterations to run",
+            "要运行的训练迭代次数"
+        ],
+        [
+            "Id of a data frame that contains a pre-trained (external) word2vec model",
+            "包含预先训练好的(外部的)word2vec模型的数据帧的Id"
+        ],
+        [
+            "Number of trees.",
+            "树的数量。"
+        ],
+        [
+            "Maximum tree depth (0 for unlimited).",
+            "最大树深度(0表示无限)。"
+        ],
+        [
+            "Fewest allowed (weighted) observations in a leaf.",
+            "在一片叶子上允许的最小(加权)观测值。"
+        ],
+        [
+            "For numerical columns (real/int), build a histogram of (at least) this many bins, then split at the best point",
+            "对于数字列（实数/整数），构建（至少）这么多bin的直方图，然后在最佳点处进行拆分"
+        ],
+        [
+            "",
+            ""
+        ],
+        [
+            "",
+            ""
+        ],
+        [
+            "",
+            ""
+        ],
+        [
+            "",
+            ""
+        ],
+        [
+            "",
+            ""
+        ],
+        [
+            "",
+            ""
+        ],
+        [
+            "",
+            ""
         ],
         [
             "",
@@ -954,7 +1034,7 @@
                 {
                     "label": [
                         "Partial Dependence Plots...",
-                        "Partial Dependence Plots..."
+                        "部分依赖图..."
                     ]
                 },
                 {
@@ -1211,8 +1291,18 @@
             [
                 "h3",
                 "Data",
-                ""
+                "数据"
             ],
+            [
+                "blockquote",
+                "No data found.",
+                "没有数据。"
+            ],
+            [
+                "h4",
+                "Tables",
+                "表"
+            ],            
             [
                 "th",
                 "&nbsp;",
@@ -1221,12 +1311,12 @@
             [
                 "th",
                 "Name",
-                ""
+                "名称"
             ],
             [
                 "th",
                 "Actions",
-                ""
+                "动作"
             ],
             [
                 "a",
@@ -1234,14 +1324,14 @@
                 ""
             ],
             [
-                "span",
+                "button",
                 "Inspect",
-                ""
+                "检查"
             ],
             [
-                "span",
+                "button",
                 "Plot",
-                ""
+                "图表"
             ]
         ]
     },
@@ -1257,7 +1347,7 @@
             ],
             [
                 "blockquote",
-                "Your H<sub>2</sub>O cloud has no models.",
+                "Your H<sub>2</sub>O could has no models.",
                 "你的H<sub>2</sub>O云没有模型。"
             ],
             [
@@ -1290,6 +1380,26 @@
                 "th",
                 "Actions",
                 "动作"
+            ],
+            [
+                "button",
+                "Predict",
+                "预测"
+            ],
+            [
+                "button",
+                "Inspect",
+                "检查"
+            ],
+            [
+                "button",
+                "Inspect",
+                "检查"
+            ],
+            [
+                "button",
+                "Delete selected",
+                "删除所选"
             ]
         ]
     },
@@ -1303,8 +1413,7 @@
             [
                 "input[title]",
                 "Check to enable grid search on this parameter",
-                "检查以启用此参数的网格搜索
-",
+                "检查以启用此参数的网格搜索",
                 "title"
             ],
             [
@@ -1403,7 +1512,7 @@
             [
                 "label",
                 "Actions:",
-                ""
+                "动作:"
             ],
             [
                 "span",
@@ -1415,19 +1524,24 @@
     "flow-import-model-input": {
         "label": [
             [
+                "h3",
+                "Import Model",
+                "导入模型"
+            ],
+            [
                 "label",
                 "Path:",
-                ""
+                "路径"
             ],
             [
                 "label",
                 "Overwrite:",
-                ""
+                "覆盖:"
             ],
             [
                 "label",
                 "Actions:",
-                ""
+                "动作:"
             ],
             [
                 "span",
@@ -1453,54 +1567,67 @@
     "flow-assist": {
         "description": [
             [
+                "td",
                 "Import file(s) into H<sub>2</sub>O",
                 "将文件导入H<sub>2</sub>O"
             ],
             [
+                "td",
                 "Import SQL table into H<sub>2</sub>O",
                 "将SQL表导入H<sub>2</sub>O"
             ],
             [
+                "td",
                 "Get a list of frames in H<sub>2</sub>O",
                 "在H<sub>2</sub>O中获得一个帧列表"
             ],
             [
+                "td",
                 "Split a frame into two or more frames",
                 "将一个帧拆分成两个或更多的帧"
             ],
             [
+                "td",
                 "Merge two frames into one",
                 "将两帧合并为一帧"
             ],
             [
+                "td",
                 "Get a list of models in H<sub>2</sub>O",
                 "获取H<sub>2</sub>O中的模型列表"
             ],
             [
+                "td",
                 "Get a list of grid search results in H<sub>2</sub>O",
                 "获得H<sub>2</sub>O中的网格搜索结果列表"
             ],
             [
+                "td",
                 "Get a list of predictions in H<sub>2</sub>O",
                 "获得H<sub>2</sub>O中的预测列表"
             ],
             [
+                "td",
                 "Get a list of jobs running in H<sub>2</sub>O",
                 "获取在H<sub>2</sub>O中运行的作业列表"
             ],
             [
+                "td",
                 "Automatically train and tune many models",
                 "自动训练和调整许多模型"
             ],
             [
+                "td",
                 "Build a model",
                 "建立一个模型"
             ],
             [
+                "td",
                 "Import a saved model",
                 "导入保存的模型"
             ],
             [
+                "td",
                 "Make a prediction",
                 "做一个预测"
             ]
@@ -1509,7 +1636,7 @@
             [
                 "h3",
                 "Assistance",
-                ""
+                "帮助"
             ],
             [
                 "th",
@@ -1519,21 +1646,36 @@
             [
                 "th",
                 "Routine",
-                ""
+                "例行程序"
             ],
             [
                 "th",
                 "Description",
-                ""
+                "说明"
             ]
         ]
     },
     "flow-predict-output": {
         "label": [
             [
+                "h3",
+                "Prediction",
+                "预测"
+            ],
+            [
                 "label",
                 "Actions:",
-                ""
+                "动作:"
+            ],
+            [
+                "button",
+                "Inspect",
+                "检查"
+            ],
+            [
+                "button",
+                "Combine predictions with frame",
+                "将预测与帧结合起来"
             ]
         ]
     },
@@ -1586,44 +1728,49 @@
     "flow-predict-input": {
         "label": [
             [
+                "h3",
+                "Predict",
+                "预测"
+            ],
+            [
                 "label",
                 "Name:",
-                ""
+                "名称:"
             ],
             [
                 "label",
                 "Model:",
-                ""
+                "模型:"
             ],
             [
                 "label",
                 "Frame:",
-                ""
+                "帧:"
             ],
             [
                 "label",
                 "Compute Reconstruction Error:",
-                ""
+                "计算重建错误:"
             ],
             [
                 "label",
                 "Compute Deep Features Hidden Layer:",
-                ""
+                "计算深层特征隐藏层:"
             ],
             [
                 "span",
                 "Hidden Layer #:",
-                ""
+                "隐藏层#:"
             ],
             [
                 "label",
                 "Compute Leaf Node Assignment:",
-                ""
+                "计算叶节点分配:"
             ],
             [
                 "label",
                 "Compute Exemplar Index:",
-                ""
+                "计算范例指数:"
             ],
             [
                 "span",
@@ -1633,12 +1780,12 @@
             [
                 "label",
                 "Actions:",
-                ""
+                "动作:"
             ],
             [
                 "span",
                 "Predict",
-                ""
+                "预测"
             ]
         ]
     },
@@ -1666,7 +1813,7 @@
             [
                 "input[title]",
                 "Select or deselect all",
-                "",
+                "全部选择或取消",
                 "title"
             ],
             [
@@ -1690,6 +1837,16 @@
     "flow-jobs-output": {
         "label": [
             [
+                "h3",
+                "Jobs",
+                "作业"
+            ],
+            [
+                "blockquote",
+                "Your H<sub>2</sub>O could has no jobs.",
+                "你的H<sub>2</sub>O可能没有作业。"
+            ],
+            [
                 "th",
                 "&nbsp;",
                 ""
@@ -1697,37 +1854,37 @@
             [
                 "th",
                 "Type",
-                ""
+                "类型"
             ],
             [
                 "th",
                 "Destination",
-                ""
+                "目标"
             ],
             [
                 "th",
                 "Description",
-                ""
+                "说明"
             ],
             [
                 "th",
                 "Start Time",
-                ""
+                "开始时间"
             ],
             [
                 "th",
                 "End Time",
-                ""
+                "结束时间"
             ],
             [
                 "th",
                 "Run Time",
-                ""
+                "运行时间"
             ],
             [
                 "th",
                 "Status",
-                ""
+                "状态"
             ],
             [
                 "a",
@@ -1735,67 +1892,72 @@
                 ""
             ],
             [
-                "h3",
+                "button",
                 "Stop",
-                ""
+                "停止"
             ],
             [
-                "h3",
+                "button",
                 "Refresh",
-                ""
+                "刷新"
             ]
         ]
     },
     "flow-inspect-output": {
         "label": [
             [
-                "th",
-                "&nbsp;",
-                ""
+                "h4",
+                "Schema",
+                "模式"
             ],
             [
                 "th",
                 "Name",
-                ""
+                "名称"
             ],
             [
                 "th",
                 "Type",
-                ""
+                "类型"
             ],
             [
                 "th",
                 "Actions",
-                ""
+                "动作"
             ],
             [
-                "span",
+                "button",
                 "View",
-                ""
+                "视图"
             ],
             [
-                "span",
+                "button",
                 "Plot",
-                ""
+                "图表"
             ]
         ]
     },
     "flow-partial-dependence-input": {
         "label": [
             [
+                "h3",
+                "Partial Dependence",
+                "部分依赖"
+            ],
+            [
                 "label",
                 "Save Destination PDP as:",
-                ""
+                "保存目标PDP为:"
             ],
             [
                 "label",
                 "Model:",
-                ""
+                "模型："
             ],
             [
                 "label",
                 "Frame:",
-                ""
+                "帧："
             ],
             [
                 "th",
@@ -1805,7 +1967,7 @@
             [
                 "td",
                 "Row for which partial dependence will be calculated instead of the whole input frame (-1 for all).",
-                ""
+                "将计算部分依赖关系而不是整个输入帧的行(对所有输入帧计算-1)。"
             ],
             [
                 "th",
@@ -1815,7 +1977,7 @@
             [
                 "td",
                 "How many levels should PDP compute. More levels will make it slower.",
-                ""
+                "PDP应该计算多少层。更多的级别会使它变慢。"
             ],
             [
                 "th",
@@ -1825,48 +1987,48 @@
             [
                 "td",
                 "Target class for multinomial classification.",
-                ""
+                "用于多项分类的目标类。"
             ],
             [
                 "label",
                 "Select columns?",
-                ""
+                "是否选择列？"
             ],
             [
                 "td",
                 "Checking this will allow you to select custom columns for PDP. By default, the top 10 features are used. Those features are sorted by variable importance.",
-                ""
+                "检查此选项将允许您为PDP选择自定义列。默认情况下，使用前10个特性。这些特征是根据不同的重要性排序的。"
             ],
             [
                 "label",
                 "Available columns:",
-                ""
+                "可用的列:"
             ],
             [
                 "input[placeholder]",
                 "Search...",
-                "",
+                "搜索...",
                 "placeholder"
             ],
             [
                 "label",
                 "2D PDP Columns:",
-                ""
+                "2D PDP 列："
             ],
             [
                 "td",
                 "Select lists of column name pairs to plot 2D partial dependence plot for.",
-                ""
+                "选择要绘制2D部分依赖图的列名对列表。"
             ],
             [
                 "label",
                 "Actions:",
-                ""
+                "动作:"
             ],
             [
-                "span",
+                "button",
                 "Compute",
-                ""
+                "计算"
             ]
         ]
     },
@@ -1914,17 +2076,17 @@
             [
                 "label",
                 "Save merged frame as:",
-                "保存合并帧为："
+                "保存合并帧为:"
             ],
             [
                 "label",
                 "Left frame:",
-                "左侧帧："
+                "左侧帧:"
             ],
             [
                 "label",
                 "Left column:",
-                "左侧列："
+                "左侧列:"
             ],
             [
                 "label",
@@ -1934,12 +2096,12 @@
             [
                 "label",
                 "Right frame:",
-                "右侧帧："
+                "右侧帧:"
             ],
             [
                 "label",
                 "Right column:",
-                "右侧列："
+                "右侧列:"
             ],
             [
                 "label",
@@ -1949,7 +2111,7 @@
             [
                 "label",
                 "Actions:",
-                "行动："
+                "行动:"
             ],
             [
                 "span",
@@ -1971,7 +2133,7 @@
             [
                 "th",
                 "Actions",
-                ""
+                "动作"
             ]
         ]
     },
@@ -1985,7 +2147,7 @@
             [
                 "th",
                 "Actions",
-                ""
+                "动作"
             ]
         ]
     },
@@ -1997,50 +2159,90 @@
                 "帧（Frames）"
             ],
             [
+                "blockquote",
+                "Your H<sub>2</sub>O could has no frames.",
+                "你的H<sub>2</sub>O可能没有帧。"
+            ],
+            [
                 "h3",
-                "Import files&hellip;",
-                ""
+                "Import files",
+                "导入文件"
             ],
             [
                 "th",
-                "style='font-size:inherit')",
+                "",
                 ""
             ],
             [
                 "input[title]",
                 "Select or deselect all",
-                "",
+                "全部选择或取消",
                 "title"
             ],
             [
                 "th",
                 "Type",
-                ""
+                "类型"
             ],
             [
                 "th",
                 "ID",
-                ""
+                "ID"
             ],
             [
                 "th",
                 "Rows",
-                ""
+                "行数"
             ],
             [
                 "th",
                 "Columns",
-                ""
+                "列数"
             ],
             [
                 "th",
                 "Size",
-                ""
+                "大小"
             ],
             [
                 "a",
                 "",
                 ""
+            ],
+            [
+                "button",
+                "Predict on selected frames",
+                "预测选中的帧"
+            ],
+            [
+                "button",
+                "Delete selected frames",
+                "删除选中的帧"
+            ],
+            [
+                "button",
+                "Parse",
+                "解析"
+            ],
+            [
+                "button",
+                "Build Model",
+                "构建模型"
+            ],
+            [
+                "button",
+                "Run AutoML",
+                "运行AutoML"
+            ],
+            [
+                "button",
+                "Predict",
+                "预测"
+            ],
+            [
+                "button",
+                "Inspect",
+                "检查"
             ]
         ]
     },
@@ -2122,7 +2324,7 @@
             [
                 "th",
                 "Actions:",
-                ""
+                "动作:"
             ],
             [
                 "h3",
@@ -2163,9 +2365,9 @@
     "flow-automl-input": {
         "label": [
             [
-                "span",
-                "color:red' data-bind='visible:hasValidationFailures, text:validationFailureMessage')",
-                ""
+                "h3",
+                "Run AutoML",
+                "运行AutoML"
             ]
         ]
     },
@@ -2174,27 +2376,27 @@
             [
                 "h3",
                 "Job",
-                ""
+                "作业"
             ],
             [
                 "th",
                 "Run Time",
-                ""
+                "运行时间"
             ],
             [
                 "th",
                 "Remaining Time",
-                ""
+                "剩余时间"
             ],
             [
                 "th",
                 "Type",
-                ""
+                "类型"
             ],
             [
                 "th",
                 "Key",
-                ""
+                "键"
             ],
             [
                 "a",
@@ -2204,42 +2406,52 @@
             [
                 "th",
                 "Description",
-                ""
+                "说明"
             ],
             [
                 "th",
                 "Status",
-                ""
+                "状态"
             ],
             [
                 "th",
                 "Progress",
-                ""
+                "进度"
             ],
             [
                 "th",
                 "Messages",
-                ""
+                "消息"
             ],
             [
                 "th",
                 "Actions",
-                ""
+                "动作"
             ],
             [
-                "h3",
+                "button",
                 "View",
-                ""
+                "视图"
             ],
             [
-                "h3",
+                "button",
                 "Cancel Job",
-                ""
+                "取消作业"
             ]
         ]
     },
     "flow-grids-output": {
         "label": [
+            [
+                "h3",
+                "Grids",
+                "网格"
+            ],
+            [
+                "blockquote",
+                "Your H<sub>2</sub>O could has no grid search results.",
+                "你的H<sub>2</sub>O可能没有网格搜索结果。"
+            ],
             [
                 "th",
                 "&nbsp;",
@@ -2248,12 +2460,17 @@
             [
                 "th",
                 "Key",
-                ""
+                "键"
             ],
             [
                 "th",
                 "Models",
-                ""
+                "模型"
+            ],
+            [
+                "button",
+                "Build a model",
+                "建立一个模型"
             ]
         ]
     },
@@ -2282,7 +2499,7 @@
             [
                 "label",
                 "Actions:",
-                ""
+                "动作:"
             ]
         ]
     },
@@ -2333,9 +2550,10 @@
                 "键"
             ],
             [
-                "span",
-                "",
-                ""
+                "span[title]",
+                "Delete this split",
+                "删除这个分割",
+                "title"
             ],
             [
                 "td",
@@ -2346,6 +2564,16 @@
                 "label",
                 "Seed:",
                 "种子（Seed）:"
+            ],
+            [
+                "a",
+                "Add a new split",
+                "添加一个新的分割"
+            ],
+            [
+                "button",
+                "Create",
+                "创建"
             ]
         ]
     },
@@ -2444,7 +2672,7 @@
             [
                 "th",
                 "Search:",
-                "搜索："
+                "搜索:"
             ],
             [
                 "input[placeholder]",
@@ -2460,7 +2688,7 @@
             [
                 "th",
                 "Search Results:",
-                "搜索结果："
+                "搜索结果:"
             ],
             [
                 "h3",
@@ -2480,7 +2708,7 @@
             [
                 "th",
                 "Selected Files:",
-                "选择的文件："
+                "选择的文件:"
             ],
             [
                 "h3",
@@ -2495,7 +2723,7 @@
             [
                 "th",
                 "Actions:",
-                "行动："
+                "行动:"
             ],
             [
                 "h3",
@@ -2507,14 +2735,24 @@
     "flow-predicts-output": {
         "label": [
             [
+                "h3",
+                "Predictions",
+                "预测"
+            ],
+            [
+                "blockquote",
+                "Your H<sub>2</sub>O could has no predictions.",
+                "你的H<sub>2</sub>O可能没有预测。"
+            ],
+            [
                 "th",
-                "style='font-size:inherit')",
+                "",
                 ""
             ],
             [
                 "input[title]",
                 "Select or deselect all",
-                "",
+                "全部选择或取消",
                 "title"
             ],
             [
@@ -2525,18 +2763,28 @@
             [
                 "th",
                 "Model",
-                ""
+                "模型"
             ],
             [
                 "th",
                 "Frame",
-                ""
+                "帧"
             ],
             [
                 "th",
                 "Actions",
-                ""
-            ]
+                "动作"
+            ],
+            [
+                "button",
+                "View",
+                "视图"
+            ],
+            [
+                "button",
+                "Make a prediction",
+                "做一个预测"
+            ]            
         ]
     },
     "flow-leaderboard-output": {
@@ -2641,7 +2889,7 @@
             [
                 "input[title]",
                 "Select or deselect all",
-                "",
+                "全部选择或取消",
                 "title"
             ],
             [
@@ -2657,7 +2905,7 @@
             [
                 "th",
                 "Actions",
-                ""
+                "动作"
             ]
         ]
     },
@@ -2698,7 +2946,7 @@
             [
                 "label",
                 "Actions:",
-                ""
+                "动作:"
             ],
             [
                 "span",
@@ -2720,7 +2968,7 @@
             [
                 "th",
                 "Connection URL:",
-                "连接网址："
+                "连接网址:"
             ],
             [
                 "input[placeholder]",
@@ -2731,7 +2979,7 @@
             [
                 "th",
                 "Table:",
-                "表："
+                "表:"
             ],
             [
                 "input[placeholder]",
@@ -2742,7 +2990,7 @@
             [
                 "th",
                 "Columns:",
-                "列："
+                "列:"
             ],
             [
                 "input[placeholder]",
@@ -2753,7 +3001,7 @@
             [
                 "th",
                 "Username:",
-                "用户名："
+                "用户名:"
             ],
             [
                 "input[placeholder]",
@@ -2764,7 +3012,7 @@
             [
                 "th",
                 "Password:",
-                "密码："
+                "密码:"
             ],
             [
                 "input[placeholder]",
@@ -2775,7 +3023,7 @@
             [
                 "th",
                 "Fetch mode:",
-                "提取模式："
+                "提取模式:"
             ],
             [
                 "option",
@@ -3129,92 +3377,17 @@
             [
                 "h3",
                 "Build a Model",
-                ""
+                "建立一个模型"
             ],
             [
-                "h3",
+                "label",
                 "Select an algorithm:",
-                ""
+                "选择一种算法:"
             ],
             [
-                "th",
-                "Grid ID",
-                ""
-            ],
-            [
-                "td",
-                "Destination id for this grid; auto-generated if not specified",
-                ""
-            ],
-            [
-                "th",
-                "Strategy",
-                ""
-            ],
-            [
-                "td",
-                "The default strategy 'Cartesian' covers the entire space of hyperparameter combinations. Specify the 'RandomDiscrete' strategy to get random search of all the combinations of your hyperparameters. RandomDiscrete should usually be combined with at least one early stopping criterion, max_models and/or max_runtime_secs.",
-                ""
-            ],
-            [
-                "th",
-                "Max Models",
-                ""
-            ],
-            [
-                "td",
-                "Stop grid search after building these many number of models.",
-                ""
-            ],
-            [
-                "th",
-                "Max Runtime (seconds)",
-                ""
-            ],
-            [
-                "td",
-                "Stop grid search after running for this amount of time.",
-                ""
-            ],
-            [
-                "th",
-                "Stopping Rounds",
-                ""
-            ],
-            [
-                "td",
-                "Early stopping based on convergence of stopping_metric. Stop if simple moving average of length k of the stopping_metric does not improve for k:=stopping_rounds scoring events (0 to disable).",
-                ""
-            ],
-            [
-                "th",
-                "Stopping Metric",
-                ""
-            ],
-            [
-                "td",
-                "Metric to use for early stopping (AUTO: logloss for classification, deviance for regression)",
-                ""
-            ],
-            [
-                "th",
-                "Stopping Tolerance",
-                ""
-            ],
-            [
-                "td",
-                "Relative tolerance for metric-based stopping criterion (stop if relative improvement is not at least this much)",
-                ""
-            ],
-            [
-                "h3",
+                "button",
                 "Build Model",
-                ""
-            ],
-            [
-                "span",
-                "color:red' data-bind='visible:hasValidationFailures, text:validationFailureMessage')",
-                ""
+                "建立模型"
             ]
         ]
     },
@@ -3272,7 +3445,7 @@
             [
                 "th",
                 "Actions:",
-                ""
+                "动作:"
             ],
             [
                 "h3",
@@ -3321,7 +3494,7 @@
             [
                 "th",
                 "Actions:",
-                ""
+                "动作:"
             ],
             [
                 "th",
@@ -3388,34 +3561,39 @@
     "flow-export-model-input": {
         "label": [
             [
+                "h3",
+                "Export Model",
+                "导出模型"
+            ],
+            [
                 "label",
                 "Model:",
-                ""
+                "模型："
             ],
             [
                 "label",
                 "Path:",
-                ""
+                "路径："
             ],
             [
                 "label",
                 "Overwrite:",
-                ""
+                "覆盖："
             ],
             [
                 "label",
                 "Actions:",
-                ""
+                "动作:"
             ],
             [
-                "span",
+                "button",
                 "Export",
-                ""
+                "导出"
             ],
             [
-                "span",
+                "button",
                 "Export Model Deployment Package (MOJO)",
-                ""
+                "导出模型部署包(MOJO)"
             ]
         ]
     },
@@ -3559,7 +3737,7 @@
             [
                 "h3",
                 "&nbsp;button to insert and execute the clip.",
-                "&nbsp;按钮插入和执行剪辑。”
+                "&nbsp;按钮插入和执行剪辑。"
             ],
             [
                 "h3",

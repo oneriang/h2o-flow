@@ -530,6 +530,15 @@ ControlGroups = (_, _parameters) ->
         gridEnabled = controls.some (c) -> c.isGridable
         form.push kind: 'group', title: labels[i], grided: gridEnabled
         form.push control for control in controls
+    for val, idx in form
+      if flow.l && flow.l.model_input
+        for l, i in flow.l.model_input
+          if val.title && val.title == l[0]
+            val.title = l[1]
+            break
+          if val.description && val.description == l[0]
+            val.description = l[1]
+            break
     form
 
   _readControlValue = (control) ->
