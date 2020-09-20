@@ -536,9 +536,12 @@ ControlGroups = (_, _parameters) ->
           if val.title && val.title == l[0]
             val.title = l[1]
             break
-          if val.description && val.description == l[0]
-            val.description = l[1]
-            break
+          if val.description
+            val.description_original = val.description
+            if val.description == l[0]
+              val.description_original = val.description
+              val.description = l[1]
+              break
     form
 
   _readControlValue = (control) ->

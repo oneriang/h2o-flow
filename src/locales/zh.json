@@ -445,36 +445,228 @@
             "对于数字列（实数/整数），构建（至少）这么多bin的直方图，然后在最佳点处进行拆分"
         ],
         [
-            "",
-            ""
+            "Optional project name used to group models from multiple AutoML runs into a single Leaderboard; derived from the training data name if not specified.",
+            "可选的项目名称，用于将来自多个AutoML运行的模型分组到一个单一的排行榜中;如果未指定，则从训练数据名称派生。"
         ],
         [
-            "",
-            ""
+            "ID of the training data frame.",
+            "训练数据帧的ID。"
         ],
         [
-            "",
-            ""
+            "Response column",
+            "响应列"
         ],
         [
-            "",
-            ""
+            "ID of the validation data frame (used for early stopping in grid searches and for early stopping of the AutoML process itself).",
+            "验证数据帧的ID(用于网格搜索中的早期停止以及AutoML进程本身的早期停止)。"
         ],
         [
-            "",
-            ""
+            "ID of the H2OFrame used to train the the metalearning algorithm in Stacked Ensembles (instead of relying on cross-validated predicted values). When provided, it is also recommended to disable cross validation by setting `nfolds=0` and to provide a leaderboard frame for scoring purposes.",
+            "H2OFrame的ID，用于在堆叠集合体（Stacked Ensembles）中训练metalearning算法(而不是依赖交叉验证的预测值)。当提供时，还建议通过设置' nfolds=0 '来禁用交叉验证，并提供一个排行榜框帧用于评分目的。"
         ],
         [
-            "",
-            ""
+            "ID of the leaderboard data frame (used to score models and rank them on the AutoML Leaderboard).",
+            "排行榜数据帧的ID（用于对模型评分并在AutoML排行榜上对它们进行排名）。"
         ],
         [
-            "",
-            ""
+            "Number of folds for k-fold cross-validation (defaults to 5, must be >=2 or use 0 to disable). Disabling prevents Stacked Ensembles from being built.",
+            "k-fold交叉验证的折叠数(默认为5，必须是>=2或使用0禁用)。禁用可防止构建堆叠的集成。"
         ],
         [
-            "",
-            ""
+            "A list of algorithms to skip during the model-building phase.",
+            "在模型构建阶段要跳过的算法列表。"
+        ],
+        [
+            "The budget ratio (between 0 and 1) dedicated to the exploitation (vs exploration) phase.",
+            "专门用于开发（vs 勘探）阶段的预算比率（0到1之间）。"
+        ],
+        [
+            "A mapping representing monotonic constraints. Use +1 to enforce an increasing constraint and -1 to specify a decreasing constraint.",
+            "表示单调约束的映射。使用+1执行递增的约束，使用-1指定递减的约束。"
+        ],
+        [
+            "Fold column (contains fold IDs) in the training frame. These assignments are used to create the folds for cross-validation of the models.",
+            "训练框帧中的Fold列(包含Fold id)。这些分配用于创建交叉验证模型的折叠。"
+        ],
+        [
+            "Weights column in the training frame, which specifies the row weights used in model training.",
+            "训练框中的“权重（Weights）”列，用于指定模型训练中使用的行权重。"
+        ],
+        [
+            "Metric used to sort leaderboard",
+            "用于对排行榜进行排序的指标"
+        ],
+        [
+            "Seed for random number generator; set to a value other than -1 for reproducibility.",
+            "随机数生成器的种子;为了重现性，将其设置为-1以外的值。"
+        ],
+        [
+            "Maximum number of models to build (optional).",
+            "要构建的最大模型数（可选）。"
+        ],
+        [
+            "This argument specifies the maximum time that the AutoML process will run for, prior to training the final Stacked Ensemble models. If neither max_runtime_secs nor max_models are specified by the user, then max_runtime_secs defaults to 3600 seconds (1 hour).",
+            "这个参数指定了AutoML进程在训练最终叠集合体（Stacked Ensemble）模型之前运行的最大时间。如果用户没有指定max_runtime_secs和max_models，那么max_runtime_secs的缺省值是3600秒(1小时)。"
+        ],
+        [
+            "Maximum time to spend on each individual model (optional).",
+            "在每个模型上花费的最大时间(可选)。"
+        ],
+        [
+            "Metric to use for early stopping (AUTO: logloss for classification, deviance for regression)",
+            "用于提前停止的度量(自动:分类的偏差，回归的偏差)"
+        ],
+        [
+            "Whether to keep the predictions of the cross-validation predictions. This needs to be set to TRUE if running the same AutoML object for repeated runs because CV predictions are required to build additional Stacked Ensemble models in AutoML.",
+            "是否保留交叉验证预测的预测。如果要重复运行相同的AutoML对象，则需要将其设置为TRUE，因为要在AutoML中构建其他堆叠集合体（Stacked Ensemble）模型，需要CV预测。"
+        ],
+        [
+            "Whether to keep the cross-validated models. Keeping cross-validation models may consume significantly more memory in the H2O cluster.",
+            "是否保留交叉验证的模型。在H2O集群中，保持交叉验证模型可能会消耗大量内存。"
+        ],
+        [
+            "Whether to keep cross-validation assignments.",
+            "是否保持交叉验证分配。"
+        ],
+        [
+            "Path to a directory where every generated model will be stored.",
+            "指定一个目录的路径，每个生成的模型都将存储在这个目录中。"
+        ],
+        [
+            "Seed for pseudo random number generator (if applicable)",
+            "伪随机数生成器的种子(如果适用)"
+        ],
+        [
+            "Number of variables randomly sampled as candidates at each split. If set to -1, defaults (number of predictors)/3.",
+            "每次分割时随机抽样作为候选变量的数量。如果设置为-1，默认值(预测器的数量)/3。"
+        ],
+        [
+            "Seed for pseudo random number generator (if applicable).",
+            "种子伪随机数生成器(如果适用)。"
+        ],
+        [
+            "The algorithm to use to generate rules.",
+            "用来生成规则的算法。"
+        ],
+        [
+            "Minimum length of rules. Defaults to 1.",
+            "规则的最小长度。默认为1。"
+        ],
+        [
+            "Maximum length of rules. Defaults to 10.",
+            "规则的最大长度。默认为10。"
+        ],
+        [
+            "The maximum number of rules to return. defaults to -1 which means the number of rules is selected by diminishing returns in model deviance.",
+            "返回的规则的最大数目。默认值为-1，这意味着通过减少模型偏差中的收益来选择规则的数量。"
+        ],
+        [
+            "Specifies type of base learners in the ensemble.",
+            "指定集合中基本学习者的类型。"
+        ],
+        [
+            "Seed used to generate the noise. By default, the seed is chosen randomly.",
+            "用来产生噪音的种子。默认情况下，种子是随机选择的。"
+        ],
+        [
+            "If true, enables blending of posterior probabilities (computed for a given categorical value) with prior probabilities (computed on the entire set). This allows to mitigate the effect of categorical values with small cardinality. The blending effect can be tuned using the `inflection_point` and `smoothing` parameters.",
+            "如果为真，则允许混合后验概率(为给定的分类值计算)和先验概率(为整个集合计算)。这允许减轻具有较小基数的分类值的影响。混合效果可以使用' inflection_point '和' smooth '参数来调整。"
+        ],
+        [
+            "Inflection point of the sigmoid used to blend probabilities (see `blending` parameter). For a given categorical value, if it appears less that `inflection_point` in a data sample, then the influence of the posterior probability will be smaller than the prior.",
+            "用来混合概率的s型曲线的拐点(参见混合参数)。对于给定的分类值，如果它在数据样本中出现的小于拐点，则后验概率的影响将小于前验概率。"
+        ],
+        [
+            "Smoothing factor corresponds to the inverse of the slope at the inflection point on the sigmoid used to blend probabilities (see `blending` parameter). If smoothing tends towards 0, then the sigmoid used for blending turns into a Heaviside step function.",
+            "平滑因子对应于在用于混合概率的s型曲线拐点处的斜率的倒数(见“混合”参数)。如果平滑趋向于0，那么用于混合的sigmoid变成Heaviside阶跃函数。"
+        ],
+        [
+            "Data leakage handling strategy used to generate the encoding. Supported options are:\n1) \"none\" (default) - no holdout, using the entire training frame.\n2) \"leave_one_out\" - current row's response value is subtracted from the per-level frequencies pre-calculated on the entire training frame.\n3) \"k_fold\" - encodings for a fold are generated based on out-of-fold data.\n",
+            "用于生成编码的数据泄漏处理策略。支持选项有:1)“none”(默认)-没有抵抗，使用整个训练帧。2)“leave_one_out”——从整个训练帧中预先计算的每级频率中减去当前行的响应值。3)“k_fold”——折叠的编码是基于折叠外数据生成的。"
+        ],
+        [
+            "The amount of noise to add to the encoded column. Use 0 to disable noise, and -1 (=AUTO) to let the algorithm determine a reasonable amount of noise.",
+            "要添加到已编码列的噪声量。使用0来禁用噪声，和-1 (=AUTO)让算法确定一个合理的噪声量。"
+        ],
+        [
+            "Number of variables randomly sampled as candidates at each split. If set to -1, defaults to sqrt{p} for classification and p/3 for regression (where p is the # of predictors",
+            "每次分割时随机抽样作为候选变量的数量。如果设置为-1，则默认为sqrt{p}用于分类，p/3用于回归(其中p是预测器的#)"
+        ],
+        [
+            "Row sample rate per tree (from 0.0 to 1.0)",
+            "每棵树的行采样率（从0.0到1.0）"
+        ],
+        [
+            "Score the model after every so many trees. Disabled if set to 0.",
+            "每隔几棵树就对模型评分。如果设置为0，则禁用。"
+        ],
+        [
+            "[Deprecated] Maximum size (# classes) for confusion matrices to be printed in the Logs",
+            "[不推荐使用]将在日志中打印的混淆矩阵的最大大小（＃类）"
+        ],
+        [
+            "Max. number (top K) of predictions to use for hit ratio computation (for multi-class only, 0 to disable)",
+            "Max。用于命中率计算的预测数(top K)(仅针对多类，0表示禁用)"
+        ],
+        [
+            "For numerical columns (real/int), build a histogram of (at most) this many bins at the root level, then decrease by factor of two per level",
+            "对于数值列(real/int)，在根级别构建(最多)这么多bin的柱状图，然后每层减少2倍"
+        ],
+        [
+            "For categorical columns (factors), build a histogram of this many bins, then split at the best point. Higher values can lead to more overfitting.",
+            "对于分类列(因子)，构建这么多箱bom的柱状图，然后在最佳点分割。较高的值会导致过度拟合。"
+        ],
+        [
+            "r2_stopping is no longer supported and will be ignored if set - please use stopping_rounds, stopping_metric and stopping_tolerance instead. Previous version of H2O would stop making trees when the R^2 metric equals or exceeds this",
+            "r2_stopping不再受支持，如果已设置，将被忽略-请改用Stopping_rounds，stopping_metric和Stopping_tolerance。当R ^ 2指标等于或超过此值时，以前版本的H2O将停止生成树"
+        ],
+        [
+            "Column sample rate per tree (from 0.0 to 1.0)",
+            "每棵树的列采样率（从0.0到1.0）"
+        ],
+        [
+            "Minimum relative improvement in squared error reduction for a split to happen",
+            "平方误差减少的最小相对改进，以便进行拆分"
+        ],
+        [
+            "What type of histogram to use for finding optimal split points",
+            "使用什么类型的柱状图来寻找最佳分割点"
+        ],
+        [
+            "Reference to custom evaluation function, format: `language:keyName=funcName`",
+            "引用自定义评估函数，格式：`language：keyName = funcName`"
+        ],
+        [
+            "Gains/Lift table number of bins. 0 means disabled.. Default value -1 means automatic binning.",
+            "bins的增益/提升表。0表示禁用。默认值-1表示自动装箱。"
+        ],
+        [
+            "Run on one node only; no network overhead but fewer cpus used. Suitable for small datasets.",
+            "仅在一个节点上运行；没有网络开销，但使用的cpus更少。适用于小型数据集。"
+        ],
+        [
+            "A list of row sample rates per class (relative fraction for each class, from 0.0 to 1.0), for each tree",
+            "每棵树的每个类别的行采样率列表（每个类别的相对分数，从0.0到1.0）"
+        ],
+        [
+            "For binary classification: Build 2x as many trees (one per class) - can lead to higher accuracy.",
+            "对于二进制分类：构建2倍的树（每类一棵）-可以提高准确性。"
+        ],
+        [
+            "Relative change of the column sampling rate for every level (must be > 0.0 and <= 2.0)",
+            "每个级别的列采样率的相对变化（必须> 0.0且<= 2.0）"
+        ],
+        [
+            "Use Platt Scaling to calculate calibrated class probabilities. Calibration can provide more accurate estimates of class probabilities.",
+            "使用Platt Scaling计算校准的类概率。校准可以提供更准确的类概率估计。"
+        ],
+        [
+            "Calibration frame for Platt Scaling",
+            "普拉特缩放（Platt Scaling）的校准帧"
+        ],
+        [
+            "Check if response column is constant. If enabled, then an exception is thrown if the response column is a constant value.If disabled, then model will train regardless of the response column being a constant value or not.",
+            "检查响应列是否恒定。如果启用，则如果响应列是常数值，则抛出异常。如果禁用，那么无论响应列是否为常量，模型都将进行训练。"
         ],
         [
             "",
@@ -3772,6 +3964,106 @@
                 "span",
                 "×",
                 ""
+            ],
+            [
+                "span",
+                "Close",
+                ""
+            ],
+            [
+                "h4",
+                "Confirm",
+                "确认"
+            ],
+            [
+                "div",
+                "This action will replace your active notebook.<br>Are you sure you want to continue?",
+                "此操作将取代您的活动笔记本。<br>您确定要继续吗?"
+            ],
+            [
+                "div",
+                "This action will replace your active notebook.\nAre you sure you want to continue?",
+                "此操作将取代您的活动笔记本。\n您确定要继续吗?"
+            ],
+            [
+                "div",
+                "Are you sure you want to delete this notebook?",
+                "你确定要删除这个笔记本吗?"
+            ],
+            [
+                "div",
+                "A notebook with that name already exists.\nDo you want to replace it with the one you're saving?",
+                "这个名字的笔记本已经存在。\n你想把它替换成你正在保存的那个吗?"
+            ],
+            [
+                "div",
+                "Are you sure you want to delete this frame?",
+                "您确定要删除此帧吗?"
+            ],
+            [
+                "div",
+                "Are you sure you want to delete these frames?",
+                "您确定要删除这些帧吗?"
+            ],
+            [
+                "div",
+                "Are you sure you want to delete this model?",
+                "您确定要删除此模型吗?"
+            ],
+            [
+                "div",
+                "Are you sure you want to delete these models?",
+                "您确定要删除这些模型吗?"
+            ],
+            [
+                "button",
+                "Cancel",
+                "取消"
+            ],
+            [
+                "button",
+                "Keep",
+                "保留"
+            ],
+            [
+                "button",
+                "Create New Notebook",
+                "创建新的笔记本"
+            ],
+            [
+                "button",
+                "Load Notebook",
+                "载入笔记本"
+            ],
+            [
+                "button",
+                "Delete",
+                "删除"
+            ],
+            [
+                "button",
+                "Replace",
+                "替换"
+            ],
+            [
+                "button",
+                "Delete Frame",
+                "删除"
+            ],
+            [
+                "button",
+                "Delete Frames",
+                "删除"
+            ],
+            [
+                "button",
+                "Delete Model",
+                "删除"
+            ],
+            [
+                "button",
+                "Delete Models",
+                "删除"
             ]
         ]
     },

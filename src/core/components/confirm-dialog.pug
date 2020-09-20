@@ -1,5 +1,5 @@
 #confirm-dialog.modal.fade(tabindex='-1', role='dialog')
-  .modal-dialog
+  .modal-dialog(data-bind="descendantsComplete: _descendantsComplete")
     .modal-content
       .modal-header
         button.close(type='button', data-dismiss='modal')

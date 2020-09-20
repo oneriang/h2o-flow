@@ -46,7 +46,7 @@ exports.init = (_, _renderers) ->
   _dialogs = dialogs.init _
 
 
-  test1 = (nodes)->
+  _descendantsComplete = (nodes)->
     if flow.l && flow.l['toolbar']
       for v, i in flow.l['toolbar'].label
         els = nodes.querySelectorAll(v[0])
@@ -916,5 +916,5 @@ exports.init = (_, _renderers) ->
     editMode: editModeKeyboardShortcutsHelp
   about: _about
   dialogs: _dialogs
-  test1: test1
+  _descendantsComplete: _descendantsComplete
   templateOf: (view) -> view.template
