@@ -9,14 +9,16 @@ require('../vendor/bootstrap-growl/jquery.bootstrap-growl.js')
 
 require('jquery-textrange/jquery-textrange')
 
-l = require('./locales/zh.json');
-lang = l
+userLang = navigator.language || navigator.userLanguage; 
+if userLang
+    lang = require('./locales/' + userLang + '.json');
 
 # Start Flow
 require('./core/flow')
 
 # DOM ready event listener
 window.ready = ( ->
+    window.lang = lang
     nl = document.querySelectorAll("script[type='text/html']");
     el = {};
     for n in nl

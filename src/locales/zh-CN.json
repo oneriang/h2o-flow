@@ -1,0 +1,4150 @@
+{
+    "model_input": [
+        [
+            "Parameters",
+            "参数"
+        ],
+        [
+            "Destination id for this model; auto-generated if not specified.",
+            "此模型的目的地ID；如果未指定，则自动生成。"
+        ],
+        [
+            "Id of the training data frame.",
+            "训练数据帧的ID。"
+        ],
+        [
+            "Id of the validation data frame.",
+            "验证数据帧的ID。"
+        ],
+        [
+            "Number of folds for K-fold cross-validation (0 to disable or >= 2).",
+            "K折交叉验证的折数（0禁用或> = 2）。"
+        ],
+        [
+            "Ignore constant columns.",
+            "忽略常量列。"
+        ],
+        [
+            "The max. number of clusters. If estimate_k is disabled, the model will find k centroids, otherwise it will find up to k centroids.",
+            "最高集群数。如果禁用estimate_k，则模型将找到k个质心，否则将查找最多k个质心。"
+        ],
+        [
+            "Whether to estimate the number of clusters (<=k) iteratively and deterministically.",
+            "是否以迭代和确定性方式估计聚类数（<= k）。"
+        ],
+        [
+            "Maximum training iterations (if estimate_k is enabled, then this is for each inner Lloyds iteration)",
+            "最大训练迭代次数（如果启用了extract_k，则适用于每个内部劳埃德迭代次数）"
+        ],
+        [
+            "Standardize columns before computing distances",
+            "在计算距离之前标准化列"
+        ],
+        [
+            "Initialization mode",
+            "初始化模式"
+        ],
+        [
+            "Advanced",
+            "高级"
+        ],
+        [
+            "Cross-validation fold assignment scheme, if fold_column is not specified. The 'Stratified' option will stratify the folds based on the response variable, for classification problems.",
+            "如果未指定fold_column，则交叉验证折叠分配方案。对于分类问题，“分层”选项将根据响应变量对折痕进行分层。"
+        ],
+        [
+            "Column with cross-validation fold index assignment per observation.",
+            "每个观察结果具有交叉验证折叠索引分配的列。"
+        ],
+        [
+            "Whether to score during each iteration of model training.",
+            "在模型训练的每次迭代期间是否得分。"
+        ],
+        [
+            "RNG Seed",
+            "RNG种子"
+        ],
+        [
+            "Maximum allowed runtime in seconds for model training. Use 0 to disable.",
+            "模型训练的最大允许运行时间（以秒为单位）。使用0禁用。"
+        ],
+        [
+            "Encoding scheme for categorical features",
+            "分类特征的编码方案"
+        ],
+        [
+            "Automatically export generated models to this directory.",
+            "自动将生成的模型导出到此目录。"
+        ],
+        [
+            "Expert",
+            "专家"
+        ],
+        [
+            "Whether to keep the cross-validation models.",
+            "是否保留交叉验证模型。"
+        ],
+        [
+            "Whether to keep the predictions of the cross-validation models.",
+            "是否保留交叉验证模型的预测。"
+        ],
+        [
+            "Whether to keep the cross-validation fold assignment.",
+            "是否保留交叉验证折叠分配。"
+        ],
+        [
+            "This option allows you to specify a dataframe, where each row represents an initial cluster center. The user-specified points must have the same number of columns as the training observations. The number of rows must equal the number of clusters",
+            "此选项允许您指定一个数据框，其中每一行代表一个初始群集中心。用户指定的点必须具有与训练观测值相同的列数。行数必须等于簇数"
+        ],
+        [
+            "An array specifying the minimum number of points that should be in each cluster. The length of the constraints array has to be the same as the number of clusters.",
+            "一个数组，用于指定每个群集中的最小点数。约束数组的长度必须与簇数相同。"
+        ],
+        [
+            "Response variable column.",
+            "响应变量列。"
+        ],
+        [
+            "Targeted number of exemplars",
+            "目标样本数"
+        ],
+        [
+            "Relative tolerance for number of exemplars (e.g, 0.5 is +/- 50 percents)",
+            "样本数量的相对公差（例如0.5为+/- 50％）"
+        ],
+        [
+            "Transformation of training data",
+            "训练数据的转换"
+        ],
+        [
+            "Whether to export the mapping of the aggregated frame",
+            "是否导出聚合帧的映射"
+        ],
+        [
+            "The number of iterations to run before aggregator exits if the number of exemplars collected didn't change",
+            "如果收集的样本数没有变化，则在聚合器退出之前要运行的迭代数"
+        ],
+        [
+            "Start Time Column.",
+            "开始时间列。"
+        ],
+        [
+            "Stop Time Column.",
+            "停止时间列。"
+        ],
+        [
+            "Method for Handling Ties.",
+            "处理层级的方法。"
+        ],
+        [
+            "Coefficient starting value.",
+            "系数起始值。"
+        ],
+        [
+            "Minimum log-relative error.",
+            "最小对数相对误差。"
+        ],
+        [
+            "Maximum number of iterations.",
+            "最大迭代次数。"
+        ],
+        [
+            "Column with observation weights. Giving some observation a weight of zero is equivalent to excluding it from the dataset; giving an observation a relative weight of 2 is equivalent to repeating that row twice. Negative weights are not allowed. Note: Weights are per-row observation weights and do not increase the size of the data frame. This is typically the number of times a row is repeated, but non-integer values are supported as well. During training, rows with higher weights matter more, due to the larger loss function pre-factor.",
+            "具有观察权重的列。给某个观察值权重为零就等于从数据集中排除它；给出一个相对权重为2的观察值等于将该行重复两次。负负数是不允许的。注意:权重是每行观察权重，不会增加数据帧的大小。这通常是重复行的次数，但是也支持非整数值。在训练期间，由于较大的损失函数因素，具有较高权重的行更为重要。"
+        ],
+        [
+            "Offset column. This will be added to the combination of columns before applying the link function.",
+            "偏移列。在应用链接功能之前，它将被添加到列的组合中。"
+        ],
+        [
+            "A list of pairwise (first order) column interactions.",
+            "成对（一阶）列交互的列表。"
+        ],
+        [
+            "(Internal. For development only!) Indicates whether to use all factor levels.",
+            "（内部。仅用于开发！）指示是否使用所有因子水平。s"
+        ],
+        [
+            "Run on a single node to reduce the effect of network overhead (for smaller datasets)",
+            "在单个节点上运行以减少网络开销的影响（对于较小的数据集）"
+        ],
+        [
+            "Names of columns to ignore for training.",
+            "训练时要忽略的列名。"
+        ],
+        [
+            "Activation function.",
+            "激活功能。"
+        ],
+        [
+            "Hidden layer sizes (e.g. [100, 100]).",
+            "隐藏的图层大小（例如[100，100]）。"
+        ],
+        [
+            "How many times the dataset should be iterated (streamed), can be fractional.",
+            "多少次的数据集应该迭代（流），可为分数。"
+        ],
+        [
+            "Compute variable importances for input features (Gedeon method) - can be slow for large networks.",
+            "计算输入功能的变量重要性（Gedeon方法）-对于大型网络可能很慢。"
+        ],
+        [
+            "Balance training data class counts via over/under-sampling (for imbalanced data).",
+            "通过上/下采样（对于不平衡数据）平衡训练数据类计数。"
+        ],
+        [
+            "[Deprecated] Maximum size (# classes) for confusion matrices to be printed in the Logs.",
+            "[不推荐使用]要在日志中打印的混淆矩阵的最大大小（＃类）。"
+        ],
+        [
+            "Max. number (top K) of predictions to use for hit ratio computation (for multi-class only, 0 to disable).",
+            "最高计算命中率的预测数（前K个）（仅适用于多类别，禁用则为0）。"
+        ],
+        [
+            "Model checkpoint to resume training with.",
+            "恢复检查的模型检查点。"
+        ],
+        [
+            "Use all factor levels of categorical variables. Otherwise, the first factor level is omitted (without loss of accuracy). Useful for variable importances and auto-enabled for autoencoder.",
+            "使用分类变量的所有因子水平。否则，将忽略第一个因子水平（不损失准确性）。对于重要程度有用，对于自动编码器自动启用。"
+        ],
+        [
+            "If enabled, automatically standardize the data. If disabled, the user must provide properly scaled input data.",
+            "如果启用，将自动标准化数据。如果禁用，则用户必须提供适当缩放的输入数据。"
+        ],
+        [
+            "Number of training samples (globally) per MapReduce iteration. Special values are 0: one epoch, -1: all available data (e.g., replicated training data), -2: automatic.",
+            "每个MapReduce迭代的训练样本数量（全局）。特殊值是0:一个时期，-1:所有可用数据（例如，复制的训练数据），-2:自动。"
+        ],
+        [
+            "Adaptive learning rate.",
+            "自适应学习率。"
+        ],
+        [
+            "Input layer dropout ratio (can improve generalization, try 0.1 or 0.2).",
+            "输入层的丢失率（可以提高泛化程度，请尝试0.1或0.2）。"
+        ],
+        [
+            "L1 regularization (can add stability and improve generalization, causes many weights to become 0).",
+            "L1正则化（可以增加稳定性并改善泛化，使许多权重变为0）。"
+        ],
+        [
+            "L2 regularization (can add stability and improve generalization, causes many weights to be small.",
+            "L2正则化（可以增加稳定性并提高泛化性，导致许多权重较小。"
+        ],
+        [
+            "Loss function.",
+            "损失功能。"
+        ],
+        [
+            "Distribution function",
+            "分配功能"
+        ],
+        [
+            "Desired quantile for Quantile regression, must be between 0 and 1.",
+            "分位数回归所需的分位数必须在0到1之间。"
+        ],
+        [
+            "Tweedie power for Tweedie regression, must be between 1 and 2.",
+            "Tweedie回归的Tweedie幂必须在1到2之间。"
+        ],
+        [
+            "Desired quantile for Huber/M-regression (threshold between quadratic and linear loss, must be between 0 and 1).",
+            "进行Huber / M回归的所需分位数（二次损耗和线性损耗之间的阈值，必须介于0和1之间）。"
+        ],
+        [
+            "Shortest time interval (in seconds) between model scoring.",
+            "两次模型评分之间的最短时间间隔（以秒为单位）。"
+        ],
+        [
+            "Number of training set samples for scoring (0 for all).",
+            "训练集样本数进行打分（0所有）。"
+        ],
+        [
+            "Maximum duty cycle fraction for scoring (lower: more training, higher: more scoring).",
+            "得分的最大占空比分数（较低:更多训练，较高:更多得分）。"
+        ],
+        [
+            "Early stopping based on convergence of stopping_metric. Stop if simple moving average of length k of the stopping_metric does not improve for k:=stopping_rounds scoring events (0 to disable)",
+            "根据stopping_metric的收敛提前停止。如果stop_metric的长度为k的简单移动平均线没有针对k:= stopping_rounds得分事件而提高，则停止（0禁用）"
+        ],
+        [
+            "Metric to use for early stopping (AUTO: logloss for classification, deviance for regression and anonomaly_score for Isolation Forest). Note that custom and custom_increasing can only be used in GBM and DRF with the Python client.",
+            "用于提前停止的度量标准（AUTO:用于分类的对数丢失，用于回归的偏差和对于Isolation Forest的anonomaly_score）。请注意，custom和custom_increasing只能在带有Python客户端的GBM和DRF中使用。"
+        ],
+        [
+            "Relative tolerance for metric-based stopping criterion (stop if relative improvement is not at least this much)",
+            "基于度量的停止标准的相对容忍度（如果相对改善不那么小则停止）"
+        ],
+        [
+            "Auto-Encoder.",
+            "自动编码器。"
+        ],
+        [
+            "Desired over/under-sampling ratios per class (in lexicographic order). If not specified, sampling factors will be automatically computed to obtain class balance during training. Requires balance_classes.",
+            "每类所需的上/下采样率（按字典顺序）。如果未指定，将在训练过程中自动计算采样因子以获得班级平衡。需要balance_classes。"
+        ],
+        [
+            "Maximum relative size of the training data after balancing class counts (can be less than 1.0). Requires balance_classes.",
+            "平衡class数量后，训练数据的最大相对大小（可以小于1.0）。需要balance_classes。"
+        ],
+        [
+            "Pretrained autoencoder model to initialize this model with.",
+            "预训练的自动编码器模型可用来初始化此模型。"
+        ],
+        [
+            "If enabled, override the final model with the best model found during training.",
+            "如果启用，则用训练过程中找到的最佳模型覆盖最终模型。"
+        ],
+        [
+            "Target ratio of communication overhead to computation. Only for multi-node operation and train_samples_per_iteration = -2 (auto-tuning).",
+            "通信开销与计算的目标比率。仅适用于多节点操作，train_samples_per_iteration = -2（自动调整）。"
+        ],
+        [
+            "Seed for random numbers (affects sampling) - Note: only reproducible when running single threaded.",
+            "随机数的种子（影响采样）-注意:仅在运行单线程时才可重现。"
+        ],
+        [
+            "Adaptive learning rate time decay factor (similarity to prior updates).",
+            "自适应学习率时间衰减因子（类似于先前的更新）。"
+        ],
+        [
+            "Adaptive learning rate smoothing factor (to avoid divisions by zero and allow progress).",
+            "自适应学习率平滑因子（避免除以零并允许进步）。"
+        ],
+        [
+            "Use Nesterov accelerated gradient (recommended).",
+            "使用Nesterov加速梯度（推荐）。"
+        ],
+        [
+            "Constraint for squared sum of incoming weights per unit (e.g. for Rectifier).",
+            "限制每单位传入权重的平方和（例如整流器）。"
+        ],
+        [
+            "Initial weight distribution.",
+            "初始重量分布。"
+        ],
+        [
+            "Stopping criterion for regression error (MSE) on training data (-1 to disable).",
+            "训练数据回归错误（MSE）的停止标准（禁用为-1）。"
+        ],
+        [
+            "Enable diagnostics for hidden layers.",
+            "启用隐藏层诊断。"
+        ],
+        [
+            "Enable fast mode (minor approximation in back-propagation).",
+            "启用快速模式（反向传播中的次要近似值）。"
+        ],
+        [
+            "Force extra load balancing to increase training speed for small datasets (to keep all cores busy).",
+            "强制进行额外的负载平衡，以提高小型数据集的训练速度（以保持所有核心繁忙）。"
+        ],
+        [
+            "Run on a single node for fine-tuning of model parameters.",
+            "在单个节点上运行以微调模型参数。"
+        ],
+        [
+            "Enable shuffling of training data (recommended if training data is replicated and train_samples_per_iteration is close to #nodes x #rows, of if using balance_classes).",
+            "启用混排训练数据（如果复制训练数据且train_samples_per_iteration接近于#nodes x #rows（如果使用balance_classes，则建议使用））。"
+        ],
+        [
+            "Handling of missing values. Either MeanImputation or Skip.",
+            "处理缺失值。均值输入或跳过。"
+        ],
+        [
+            "Enable quiet mode for less output to standard output.",
+            "启用安静模式可减少输出到标准输出。"
+        ],
+        [
+            "Sparse data handling (more efficient for data with lots of 0 values).",
+            "稀疏的数据处理（对于具有很多0值的数据，效率更高）。"
+        ],
+        [
+            "#DEPRECATED Use a column major weight matrix for input layer. Can speed up forward propagation, but might slow down backpropagation.",
+            "#DEPRECATED对输入图层使用列主权重矩阵。可以加快前向传播，但可能会减慢反向传播。"
+        ],
+        [
+            "Average activation for sparse auto-encoder. #Experimental",
+            "稀疏自动编码器的平均激活。 ＃实验性"
+        ],
+        [
+            "Sparsity regularization. #Experimental",
+            "稀疏正则化。 ＃实验性"
+        ],
+        [
+            "Max. number of categorical features, enforced via hashing. #Experimental",
+            "最高通过散列实施的分类功能的数量。 ＃实验性"
+        ],
+        [
+            "Force reproducibility on small data (will be slow - only uses 1 thread).",
+            "在小数据上强制重现性（速度很慢-仅使用1个线程）。"
+        ],
+        [
+            "Whether to export Neural Network weights and biases to H2O Frames.",
+            "是否将神经网络权重和偏差导出到H2O框架。"
+        ],
+        [
+            "Mini-batch size (smaller leads to better fit, larger can speed up and generalize better).",
+            "迷你批处理大小（较小的引线可导致更好的契合度，较大的引线可加快速度并泛化效果更好）。"
+        ],
+        [
+            "Elastic averaging between compute nodes can improve distributed model convergence. #Experimental",
+            "计算节点之间的弹性平均可以改善分布式模型的收敛性。 ＃实验性"
+        ],
+        [
+            "This will discard words that appear less than <int> times",
+            "这将丢弃出现次数小于<int>的单词"
+        ],
+        [
+            "The word model to use (SkipGram or CBOW)",
+            "使用的单词模型(SkipGram或CBOW)"
+        ],
+        [
+            "Use Hierarchical Softmax",
+            "使用分层Softmax"
+        ],
+        [
+            "Set size of word vectors",
+            "设置单词向量的大小"
+        ],
+        [
+            "Set max skip length between words",
+            "设置单词之间的最大跳过长度"
+        ],
+        [
+            "Set threshold for occurrence of words. Those that appear with higher frequency in the training data will be randomly down-sampled; useful range is (0, 1e-5)",
+            "设置单词出现的阈值。对训练数据中出现频率较高的部分进行随机降采样;有效范围为(0,1e -5)"
+        ],
+        [
+            "Set the starting learning rate",
+            "设置开始学习率"
+        ],
+        [
+            "Number of training iterations to run",
+            "要运行的训练迭代次数"
+        ],
+        [
+            "Id of a data frame that contains a pre-trained (external) word2vec model",
+            "包含预先训练好的(外部的)word2vec模型的数据帧的Id"
+        ],
+        [
+            "Number of trees.",
+            "树的数量。"
+        ],
+        [
+            "Maximum tree depth (0 for unlimited).",
+            "最大树深度(0表示无限)。"
+        ],
+        [
+            "Fewest allowed (weighted) observations in a leaf.",
+            "在一片叶子上允许的最小(加权)观测值。"
+        ],
+        [
+            "For numerical columns (real/int), build a histogram of (at least) this many bins, then split at the best point",
+            "对于数字列（实数/整数），构建（至少）这么多bin的直方图，然后在最佳点处进行拆分"
+        ],
+        [
+            "Optional project name used to group models from multiple AutoML runs into a single Leaderboard; derived from the training data name if not specified.",
+            "可选的项目名称，用于将来自多个AutoML运行的模型分组到一个单一的排行榜中;如果未指定，则从训练数据名称派生。"
+        ],
+        [
+            "ID of the training data frame.",
+            "训练数据帧的ID。"
+        ],
+        [
+            "Response column",
+            "响应列"
+        ],
+        [
+            "ID of the validation data frame (used for early stopping in grid searches and for early stopping of the AutoML process itself).",
+            "验证数据帧的ID(用于网格搜索中的早期停止以及AutoML进程本身的早期停止)。"
+        ],
+        [
+            "ID of the H2OFrame used to train the the metalearning algorithm in Stacked Ensembles (instead of relying on cross-validated predicted values). When provided, it is also recommended to disable cross validation by setting `nfolds=0` and to provide a leaderboard frame for scoring purposes.",
+            "H2OFrame的ID，用于在堆叠集合体（Stacked Ensembles）中训练metalearning算法(而不是依赖交叉验证的预测值)。当提供时，还建议通过设置' nfolds=0 '来禁用交叉验证，并提供一个排行榜框帧用于评分目的。"
+        ],
+        [
+            "ID of the leaderboard data frame (used to score models and rank them on the AutoML Leaderboard).",
+            "排行榜数据帧的ID（用于对模型评分并在AutoML排行榜上对它们进行排名）。"
+        ],
+        [
+            "Number of folds for k-fold cross-validation (defaults to 5, must be >=2 or use 0 to disable). Disabling prevents Stacked Ensembles from being built.",
+            "k-fold交叉验证的折叠数(默认为5，必须是>=2或使用0禁用)。禁用可防止构建堆叠的集成。"
+        ],
+        [
+            "A list of algorithms to skip during the model-building phase.",
+            "在模型构建阶段要跳过的算法列表。"
+        ],
+        [
+            "The budget ratio (between 0 and 1) dedicated to the exploitation (vs exploration) phase.",
+            "专门用于开发（vs 勘探）阶段的预算比率（0到1之间）。"
+        ],
+        [
+            "A mapping representing monotonic constraints. Use +1 to enforce an increasing constraint and -1 to specify a decreasing constraint.",
+            "表示单调约束的映射。使用+1执行递增的约束，使用-1指定递减的约束。"
+        ],
+        [
+            "Fold column (contains fold IDs) in the training frame. These assignments are used to create the folds for cross-validation of the models.",
+            "训练框帧中的Fold列(包含Fold id)。这些分配用于创建交叉验证模型的折叠。"
+        ],
+        [
+            "Weights column in the training frame, which specifies the row weights used in model training.",
+            "训练框中的“权重（Weights）”列，用于指定模型训练中使用的行权重。"
+        ],
+        [
+            "Metric used to sort leaderboard",
+            "用于对排行榜进行排序的指标"
+        ],
+        [
+            "Seed for random number generator; set to a value other than -1 for reproducibility.",
+            "随机数生成器的种子;为了重现性，将其设置为-1以外的值。"
+        ],
+        [
+            "Maximum number of models to build (optional).",
+            "要构建的最大模型数（可选）。"
+        ],
+        [
+            "This argument specifies the maximum time that the AutoML process will run for, prior to training the final Stacked Ensemble models. If neither max_runtime_secs nor max_models are specified by the user, then max_runtime_secs defaults to 3600 seconds (1 hour).",
+            "这个参数指定了AutoML进程在训练最终叠集合体（Stacked Ensemble）模型之前运行的最大时间。如果用户没有指定max_runtime_secs和max_models，那么max_runtime_secs的缺省值是3600秒(1小时)。"
+        ],
+        [
+            "Maximum time to spend on each individual model (optional).",
+            "在每个模型上花费的最大时间(可选)。"
+        ],
+        [
+            "Metric to use for early stopping (AUTO: logloss for classification, deviance for regression)",
+            "用于提前停止的度量(自动:分类的偏差，回归的偏差)"
+        ],
+        [
+            "Whether to keep the predictions of the cross-validation predictions. This needs to be set to TRUE if running the same AutoML object for repeated runs because CV predictions are required to build additional Stacked Ensemble models in AutoML.",
+            "是否保留交叉验证预测的预测。如果要重复运行相同的AutoML对象，则需要将其设置为TRUE，因为要在AutoML中构建其他堆叠集合体（Stacked Ensemble）模型，需要CV预测。"
+        ],
+        [
+            "Whether to keep the cross-validated models. Keeping cross-validation models may consume significantly more memory in the H2O cluster.",
+            "是否保留交叉验证的模型。在H2O集群中，保持交叉验证模型可能会消耗大量内存。"
+        ],
+        [
+            "Whether to keep cross-validation assignments.",
+            "是否保持交叉验证分配。"
+        ],
+        [
+            "Path to a directory where every generated model will be stored.",
+            "指定一个目录的路径，每个生成的模型都将存储在这个目录中。"
+        ],
+        [
+            "Seed for pseudo random number generator (if applicable)",
+            "伪随机数生成器的种子(如果适用)"
+        ],
+        [
+            "Number of variables randomly sampled as candidates at each split. If set to -1, defaults (number of predictors)/3.",
+            "每次分割时随机抽样作为候选变量的数量。如果设置为-1，默认值(预测器的数量)/3。"
+        ],
+        [
+            "Seed for pseudo random number generator (if applicable).",
+            "种子伪随机数生成器(如果适用)。"
+        ],
+        [
+            "The algorithm to use to generate rules.",
+            "用来生成规则的算法。"
+        ],
+        [
+            "Minimum length of rules. Defaults to 1.",
+            "规则的最小长度。默认为1。"
+        ],
+        [
+            "Maximum length of rules. Defaults to 10.",
+            "规则的最大长度。默认为10。"
+        ],
+        [
+            "The maximum number of rules to return. defaults to -1 which means the number of rules is selected by diminishing returns in model deviance.",
+            "返回的规则的最大数目。默认值为-1，这意味着通过减少模型偏差中的收益来选择规则的数量。"
+        ],
+        [
+            "Specifies type of base learners in the ensemble.",
+            "指定集合中基本学习者的类型。"
+        ],
+        [
+            "Seed used to generate the noise. By default, the seed is chosen randomly.",
+            "用来产生噪音的种子。默认情况下，种子是随机选择的。"
+        ],
+        [
+            "If true, enables blending of posterior probabilities (computed for a given categorical value) with prior probabilities (computed on the entire set). This allows to mitigate the effect of categorical values with small cardinality. The blending effect can be tuned using the `inflection_point` and `smoothing` parameters.",
+            "如果为真，则允许混合后验概率(为给定的分类值计算)和先验概率(为整个集合计算)。这允许减轻具有较小基数的分类值的影响。混合效果可以使用' inflection_point '和' smooth '参数来调整。"
+        ],
+        [
+            "Inflection point of the sigmoid used to blend probabilities (see `blending` parameter). For a given categorical value, if it appears less that `inflection_point` in a data sample, then the influence of the posterior probability will be smaller than the prior.",
+            "用来混合概率的s型曲线的拐点(参见混合参数)。对于给定的分类值，如果它在数据样本中出现的小于拐点，则后验概率的影响将小于前验概率。"
+        ],
+        [
+            "Smoothing factor corresponds to the inverse of the slope at the inflection point on the sigmoid used to blend probabilities (see `blending` parameter). If smoothing tends towards 0, then the sigmoid used for blending turns into a Heaviside step function.",
+            "平滑因子对应于在用于混合概率的s型曲线拐点处的斜率的倒数(见“混合”参数)。如果平滑趋向于0，那么用于混合的sigmoid变成Heaviside阶跃函数。"
+        ],
+        [
+            "Data leakage handling strategy used to generate the encoding. Supported options are:\n1) \"none\" (default) - no holdout, using the entire training frame.\n2) \"leave_one_out\" - current row's response value is subtracted from the per-level frequencies pre-calculated on the entire training frame.\n3) \"k_fold\" - encodings for a fold are generated based on out-of-fold data.\n",
+            "用于生成编码的数据泄漏处理策略。支持选项有:1)“none”(默认)-没有抵抗，使用整个训练帧。2)“leave_one_out”——从整个训练帧中预先计算的每级频率中减去当前行的响应值。3)“k_fold”——折叠的编码是基于折叠外数据生成的。"
+        ],
+        [
+            "The amount of noise to add to the encoded column. Use 0 to disable noise, and -1 (=AUTO) to let the algorithm determine a reasonable amount of noise.",
+            "要添加到已编码列的噪声量。使用0来禁用噪声，和-1 (=AUTO)让算法确定一个合理的噪声量。"
+        ],
+        [
+            "Number of variables randomly sampled as candidates at each split. If set to -1, defaults to sqrt{p} for classification and p/3 for regression (where p is the # of predictors",
+            "每次分割时随机抽样作为候选变量的数量。如果设置为-1，则默认为sqrt{p}用于分类，p/3用于回归(其中p是预测器的#)"
+        ],
+        [
+            "Row sample rate per tree (from 0.0 to 1.0)",
+            "每棵树的行采样率（从0.0到1.0）"
+        ],
+        [
+            "Score the model after every so many trees. Disabled if set to 0.",
+            "每隔几棵树就对模型评分。如果设置为0，则禁用。"
+        ],
+        [
+            "[Deprecated] Maximum size (# classes) for confusion matrices to be printed in the Logs",
+            "[不推荐使用]将在日志中打印的混淆矩阵的最大大小（＃类）"
+        ],
+        [
+            "Max. number (top K) of predictions to use for hit ratio computation (for multi-class only, 0 to disable)",
+            "Max。用于命中率计算的预测数(top K)(仅针对多类，0表示禁用)"
+        ],
+        [
+            "For numerical columns (real/int), build a histogram of (at most) this many bins at the root level, then decrease by factor of two per level",
+            "对于数值列(real/int)，在根级别构建(最多)这么多bin的柱状图，然后每层减少2倍"
+        ],
+        [
+            "For categorical columns (factors), build a histogram of this many bins, then split at the best point. Higher values can lead to more overfitting.",
+            "对于分类列(因子)，构建这么多箱bom的柱状图，然后在最佳点分割。较高的值会导致过度拟合。"
+        ],
+        [
+            "r2_stopping is no longer supported and will be ignored if set - please use stopping_rounds, stopping_metric and stopping_tolerance instead. Previous version of H2O would stop making trees when the R^2 metric equals or exceeds this",
+            "r2_stopping不再受支持，如果已设置，将被忽略-请改用Stopping_rounds，stopping_metric和Stopping_tolerance。当R ^ 2指标等于或超过此值时，以前版本的H2O将停止生成树"
+        ],
+        [
+            "Column sample rate per tree (from 0.0 to 1.0)",
+            "每棵树的列采样率（从0.0到1.0）"
+        ],
+        [
+            "Minimum relative improvement in squared error reduction for a split to happen",
+            "平方误差减少的最小相对改进，以便进行拆分"
+        ],
+        [
+            "What type of histogram to use for finding optimal split points",
+            "使用什么类型的柱状图来寻找最佳分割点"
+        ],
+        [
+            "Reference to custom evaluation function, format: `language:keyName=funcName`",
+            "引用自定义评估函数，格式：`language：keyName = funcName`"
+        ],
+        [
+            "Gains/Lift table number of bins. 0 means disabled.. Default value -1 means automatic binning.",
+            "bins的增益/提升表。0表示禁用。默认值-1表示自动装箱。"
+        ],
+        [
+            "Run on one node only; no network overhead but fewer cpus used. Suitable for small datasets.",
+            "仅在一个节点上运行；没有网络开销，但使用的cpus更少。适用于小型数据集。"
+        ],
+        [
+            "A list of row sample rates per class (relative fraction for each class, from 0.0 to 1.0), for each tree",
+            "每棵树的每个类别的行采样率列表（每个类别的相对分数，从0.0到1.0）"
+        ],
+        [
+            "For binary classification: Build 2x as many trees (one per class) - can lead to higher accuracy.",
+            "对于二进制分类：构建2倍的树（每类一棵）-可以提高准确性。"
+        ],
+        [
+            "Relative change of the column sampling rate for every level (must be > 0.0 and <= 2.0)",
+            "每个级别的列采样率的相对变化（必须> 0.0且<= 2.0）"
+        ],
+        [
+            "Use Platt Scaling to calculate calibrated class probabilities. Calibration can provide more accurate estimates of class probabilities.",
+            "使用Platt Scaling计算校准的类概率。校准可以提供更准确的类概率估计。"
+        ],
+        [
+            "Calibration frame for Platt Scaling",
+            "普拉特缩放（Platt Scaling）的校准帧"
+        ],
+        [
+            "Check if response column is constant. If enabled, then an exception is thrown if the response column is a constant value.If disabled, then model will train regardless of the response column being a constant value or not.",
+            "检查响应列是否恒定。如果启用，则如果响应列是常数值，则抛出异常。如果禁用，那么无论响应列是否为常量，模型都将进行训练。"
+        ],
+        [
+            "",
+            ""
+        ],
+        [
+            "",
+            ""
+        ],
+        [
+            "",
+            ""
+        ],
+        [
+            "",
+            ""
+        ],
+        [
+            "",
+            ""
+        ]
+    ],
+    "toolbar": {
+        "label": [
+            [
+                "button",
+                "title",
+                "New",
+                "新建"
+            ],
+            [
+                "button",
+                "title",
+                "Open",
+                "打开"
+            ],
+            [
+                "button",
+                "title",
+                "Save (s)",
+                "保存 (s)"
+            ],
+            [
+                "button",
+                "title",
+                "Insert Cell Below (b)",
+                "下方插入单元 (b)"
+            ],
+            [
+                "button",
+                "title",
+                "Move Cell Up (ctrl+k)",
+                "向上移动单元 (ctrl+k)"
+            ],
+            [
+                "button",
+                "title",
+                "Move Cell Down (ctrl+j)",
+                "向下移动单元 (ctrl+j)"
+            ],
+            [
+                "button",
+                "title",
+                "Cut Cell (x)",
+                "剪切单元 (x)"
+            ],
+            [
+                "button",
+                "title",
+                "Copy Cell (c)",
+                "复制单元 (c)"
+            ],
+            [
+                "button",
+                "title",
+                "Paste Cell Below (v)",
+                "下方粘贴单元 (v)"
+            ],
+            [
+                "button",
+                "title",
+                "Clear Cell",
+                "清除单元"
+            ],
+            [
+                "button",
+                "title",
+                "Delete Cell (d d)",
+                "删除单元 (d d)"
+            ],
+            [
+                "button",
+                "title",
+                "Run and Select Below",
+                "执行并选择下方单元"
+            ],
+            [
+                "button",
+                "title",
+                "Run (ctrl+enter)",
+                "执行 (ctrl+enter)"
+            ],
+            [
+                "button",
+                "title",
+                "Run All",
+                "执行全部"
+            ],
+            [
+                "button",
+                "title",
+                "Assist Me",
+                "帮助我"
+            ]
+        ]
+    },
+    "menu": [
+        {
+            "label": [
+                "Flow",
+                "流"
+            ],
+            "items": [
+                {
+                    "label": [
+                        "New Flow",
+                        "新建流"
+                    ]
+                },
+                {
+                    "label": [
+                        "Open Flow...",
+                        "打开流"
+                    ]
+                },
+                {
+                    "label": [
+                        "Save Flow<span style='float:right'><kbd>s</kbd></span>",
+                        "保存流<span style='float:right'><kbd>s</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        "Make a Copy...",
+                        "复制"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Run All Cells",
+                        "运行所有单元"
+                    ]
+                },
+                {
+                    "label": [
+                        "Run All Cells Below",
+                        "运行下面的所有单元"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Toggle All Cell Inputs",
+                        "切换所有单元输入"
+                    ]
+                },
+                {
+                    "label": [
+                        "Toggle All Cell Outputs",
+                        "切换所有单元输出"
+                    ]
+                },
+                {
+                    "label": [
+                        "Clear All Cell Outputs",
+                        "清除所有单元输出"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Download this Flow...",
+                        "下载此流"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": [
+                "Cell",
+                "单元"
+            ],
+            "items": [
+                {
+                    "label": [
+                        "Run Cell<span style='float:right'><kbd>ctrl</kbd> <kbd>enter</kbd></span>",
+                        "运行单元<span style='float:right'><kbd>ctrl</kbd> <kbd>enter</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Cut Cell<span style='float:right'><kbd>x</kbd></span>",
+                        "剪切单元<span style='float:right'><kbd>x</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        "Copy Cell<span style='float:right'><kbd>c</kbd></span>",
+                        "复制单元<span style='float:right'><kbd>c</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        "Paste Cell Above<span style='float:right'><kbd>shift</kbd> <kbd>v</kbd></span>",
+                        "上方粘贴单元<span style='float:right'><kbd>shift</kbd> <kbd>v</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        "Paste Cell Below<span style='float:right'><kbd>v</kbd></span>",
+                        "下方粘贴单元<span style='float:right'><kbd>v</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        "Delete Cell<span style='float:right'><kbd>d</kbd> <kbd>d</kbd></span>",
+                        "删除单元<span style='float:right'><kbd>d</kbd> <kbd>d</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        "Undo Delete Cell<span style='float:right'><kbd>z</kbd></span>",
+                        "撤销删除单元<span style='float:right'><kbd>z</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Move Cell Up<span style='float:right'><kbd>ctrl</kbd> <kbd>k</kbd></span>",
+                        "向上移动单元<span style='float:right'><kbd>ctrl</kbd> <kbd>k</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        "Move Cell Down<span style='float:right'><kbd>ctrl</kbd> <kbd>j</kbd></span>",
+                        "向下移动单元<span style='float:right'><kbd>ctrl</kbd> <kbd>j</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Insert Cell Above<span style='float:right'><kbd>a</kbd></span>",
+                        "上方插入单元<span style='float:right'><kbd>a</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        "Insert Cell Below<span style='float:right'><kbd>b</kbd></span>",
+                        "下方插入单元<span style='float:right'><kbd>b</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Toggle Cell Input",
+                        "切换单元输入"
+                    ]
+                },
+                {
+                    "label": [
+                        "Toggle Cell Output<span style='float:right'><kbd>o</kbd></span>",
+                        "切换单元输出<span style='float:right'><kbd>o</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        "Clear Cell Output",
+                        "清除单元输出"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": [
+                "Data",
+                "数据"
+            ],
+            "items": [
+                {
+                    "label": [
+                        "Import Files...",
+                        "导入文件"
+                    ]
+                },
+                {
+                    "label": [
+                        "Import SQL Table...",
+                        "导入SQL表..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Upload File...",
+                        "上传文件..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Split Frame...",
+                        "分割帧..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Merge Frames...",
+                        "合并帧..."
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "List All Frames",
+                        "列出所有帧"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Impute...",
+                        ""
+                    ]
+                }
+            ]
+        },
+        {
+            "label": [
+                "Model",
+                "模型"
+            ],
+            "items": [
+                {
+                    "label": [
+                        "Run AutoML...",
+                        "运行AutoML..."
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Aggregator...",
+                        "聚合器（Aggregator）..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Cox Proportional Hazards...",
+                        "COX比例风险模型（Cox Proportional Hazards）..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Deep Learning...",
+                        "深度学习..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Distributed Random Forest...",
+                        "分布式随机森林（Distributed Random Forest）..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Gradient Boosting Machine...",
+                        "梯度推进机（Gradient Boosting Machine）..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Generalized Linear Modeling...",
+                        "广义线性模型（Generalized Linear Modeling）..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Generalized Low Rank Modeling...",
+                        "广义低秩模型（Generalized Low Rank Modeling）..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Isolation Forest...",
+                        "孤立森林（Isolation Forest）..."
+                    ]
+                },
+                {
+                    "label": [
+                        "K-means...",
+                        "k均值（K-means）..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Naive Bayes...",
+                        "朴素贝叶斯算法（Naive Bayes）..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Principal Components Analysis...",
+                        "主成分分析（Principal Components Analysis）..."
+                    ]
+                },
+                {
+                    "label": [
+                        "RuleFit...",
+                        "RuleFit..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Stacked Ensemble...",
+                        "Stacked Ensemble..."
+                    ]
+                },
+                {
+                    "label": [
+                        "TargetEncoder...",
+                        "TargetEncoder..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Word2Vec...",
+                        "Word2Vec..."
+                    ]
+                },
+                {
+                    "label": [
+                        "XGBoost...",
+                        "XGBoost..."
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Import MOJO Model",
+                        "导入MOJO模型"
+                    ]
+                },
+                {
+                    "label": [
+                        "List All Models",
+                        "列出所有模型"
+                    ]
+                },
+                {
+                    "label": [
+                        "List Grid Search Results",
+                        "列出Grid搜索结果"
+                    ]
+                },
+                {
+                    "label": [
+                        "Import Model...",
+                        "导入模型..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Export Model...",
+                        "输出模型..."
+                    ]
+                }
+            ]
+        },
+        {
+            "label": [
+                "Score",
+                "评分"
+            ],
+            "items": [
+                {
+                    "label": [
+                        "Predict...",
+                        "预测..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Partial Dependence Plots...",
+                        "部分依赖图..."
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "List All Predictions",
+                        "列出所有预测"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": [
+                "Admin",
+                "管理"
+            ],
+            "items": [
+                {
+                    "label": [
+                        "Jobs",
+                        "作业"
+                    ]
+                },
+                {
+                    "label": [
+                        "Cluster Status",
+                        "集群状态"
+                    ]
+                },
+                {
+                    "label": [
+                        "Water Meter (CPU meter)",
+                        "水表（CPU仪表）"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Inspect Log",
+                        "检查日志"
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "View Log",
+                        "查看日志"
+                    ]
+                },
+                {
+                    "label": [
+                        "Download Logs",
+                        "下载日志"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Advanced",
+                        "高级"
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Download Gen Model",
+                        "下载Gen模型"
+                    ]
+                },
+                {
+                    "label": [
+                        "Create Synthetic Frame...",
+                        "创建合成帧..."
+                    ]
+                },
+                {
+                    "label": [
+                        "Stack Trace",
+                        "堆叠追踪"
+                    ]
+                },
+                {
+                    "label": [
+                        "Network Test",
+                        "网络测试"
+                    ]
+                },
+                {
+                    "label": [
+                        "Profiler",
+                        "分析器"
+                    ]
+                },
+                {
+                    "label": [
+                        "Timeline",
+                        "时间轴"
+                    ]
+                },
+                {
+                    "label": [
+                        "Shut Down",
+                        "关闭"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": [
+                "Help",
+                "帮助"
+            ],
+            "items": [
+                {
+                    "label": [
+                        "Assist Me",
+                        "帮助我"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Contents",
+                        "内容"
+                    ]
+                },
+                {
+                    "label": [
+                        "Keyboard Shortcuts<span style='float:right'><kbd>h</kbd></span>",
+                        "键盘快捷键<span style='float:right'><kbd>h</kbd></span>"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "Documentation",
+                        "文档"
+                    ]
+                },
+                {
+                    "label": [
+                        "FAQ",
+                        "常见问题解答"
+                    ]
+                },
+                {
+                    "label": [
+                        "H2O.ai",
+                        "H2O.ai"
+                    ]
+                },
+                {
+                    "label": [
+                        "H2O on Github",
+                        "H2O on Github"
+                    ]
+                },
+                {
+                    "label": [
+                        "Report an issue",
+                        "报告问题"
+                    ]
+                },
+                {
+                    "label": [
+                        "Forum / Ask a question",
+                        "论坛/提问"
+                    ]
+                },
+                {
+                    "label": [
+                        null,
+                        ""
+                    ],
+                    "action": null
+                },
+                {
+                    "label": [
+                        "About",
+                        "关于"
+                    ]
+                }
+            ]
+        }
+    ],
+    "flow-bind-frames-output": {
+        "label": []
+    },
+    "flow-rdds-output": {
+        "label": [
+            [
+                "h3",
+                "RDDs",
+                ""
+            ],
+            [
+                "th",
+                "ID",
+                ""
+            ],
+            [
+                "th",
+                "Name",
+                ""
+            ],
+            [
+                "th",
+                "Partitions",
+                ""
+            ]
+        ]
+    },
+    "flow-roomscale-scatterplot-output": {
+        "label": [
+            [
+                "a",
+                " plotUrl",
+                ""
+            ]
+        ]
+    },
+    "flow-inspects-output": {
+        "label": [
+            [
+                "h3",
+                "Data",
+                "数据"
+            ],
+            [
+                "blockquote",
+                "No data found.",
+                "没有数据。"
+            ],
+            [
+                "h4",
+                "Tables",
+                "表"
+            ],            
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ],
+            [
+                "th",
+                "Name",
+                "名称"
+            ],
+            [
+                "th",
+                "Actions",
+                "动作"
+            ],
+            [
+                "a",
+                "",
+                ""
+            ],
+            [
+                "button",
+                "Inspect",
+                "检查"
+            ],
+            [
+                "button",
+                "Plot",
+                "图表"
+            ]
+        ]
+    },
+    "flow-h2o": {
+        "label": []
+    },
+    "flow-models-output": {
+        "label": [
+            [
+                "h3",
+                "Models",
+                "模型"
+            ],
+            [
+                "blockquote",
+                "Your H<sub>2</sub>O could has no models.",
+                "你的H<sub>2</sub>O云没有模型。"
+            ],
+            [
+                "th",
+                "",
+                ""
+            ],
+            [
+                "input[title]",
+                "Select or deselect all",
+                "全部选择或取消",
+                "title"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ],
+            [
+                "th",
+                "Key",
+                "键"
+            ],
+            [
+                "th",
+                "Algorithm",
+                "算法"
+            ],
+            [
+                "th",
+                "Actions",
+                "动作"
+            ],
+            [
+                "button",
+                "Predict",
+                "预测"
+            ],
+            [
+                "button",
+                "Inspect",
+                "检查"
+            ],
+            [
+                "button",
+                "Inspect",
+                "检查"
+            ],
+            [
+                "button",
+                "Delete selected",
+                "删除所选"
+            ]
+        ]
+    },
+    "flow-model-parameter-stringpairs": {
+        "label": [
+            [
+                "span",
+                "*",
+                "*"
+            ],
+            [
+                "input[title]",
+                "Check to enable grid search on this parameter",
+                "检查以启用此参数的网格搜索",
+                "title"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ]
+        ]
+    },
+    "flow-cloud-output": {
+        "label": [
+            [
+                "span",
+                "Healthy",
+                "健康"
+            ],
+            [
+                "span",
+                "Not healthy",
+                "不健康"
+            ],
+            [
+                "span",
+                "Consensus",
+                "一致"
+            ],
+            [
+                "span",
+                "No consensus",
+                "不一致"
+            ],
+            [
+                "span",
+                "Locked",
+                "已锁定"
+            ],
+            [
+                "span",
+                "Not locked",
+                "未锁定"
+            ],
+            [
+                "th",
+                "Version",
+                "版本"
+            ],
+            [
+                "th",
+                "Started",
+                "已开始"
+            ],
+            [
+                "th",
+                "Nodes (Used / All)",
+                ""
+            ],
+            [
+                "h3",
+                "Stop",
+                "停止"
+            ],
+            [
+                "h3",
+                "Refresh",
+                "刷新"
+            ]
+        ]
+    },
+    "flow-roomscale-scatterplot-input": {
+        "label": [
+            [
+                "label",
+                "Frame:",
+                ""
+            ],
+            [
+                "label",
+                "X-Variable:",
+                ""
+            ],
+            [
+                "label",
+                "Y-Variable:",
+                ""
+            ],
+            [
+                "label",
+                "Z-Variable:",
+                ""
+            ],
+            [
+                "label",
+                "Color-Variable:",
+                ""
+            ],
+            [
+                "label",
+                "Actions:",
+                "动作:"
+            ],
+            [
+                "span",
+                "Compute",
+                ""
+            ]
+        ]
+    },
+    "flow-import-model-input": {
+        "label": [
+            [
+                "h3",
+                "Import Model",
+                "导入模型"
+            ],
+            [
+                "label",
+                "Path:",
+                "路径"
+            ],
+            [
+                "label",
+                "Overwrite:",
+                "覆盖:"
+            ],
+            [
+                "label",
+                "Actions:",
+                "动作:"
+            ],
+            [
+                "span",
+                "Import",
+                ""
+            ]
+        ]
+    },
+    "flow-scala-code-output": {
+        "label": [
+            [
+                "a",
+                "",
+                ""
+            ],
+            [
+                "a",
+                "",
+                ""
+            ]
+        ]
+    },
+    "flow-assist": {
+        "description": [
+            [
+                "td",
+                "Import file(s) into H<sub>2</sub>O",
+                "将文件导入H<sub>2</sub>O"
+            ],
+            [
+                "td",
+                "Import SQL table into H<sub>2</sub>O",
+                "将SQL表导入H<sub>2</sub>O"
+            ],
+            [
+                "td",
+                "Get a list of frames in H<sub>2</sub>O",
+                "在H<sub>2</sub>O中获得一个帧列表"
+            ],
+            [
+                "td",
+                "Split a frame into two or more frames",
+                "将一个帧拆分成两个或更多的帧"
+            ],
+            [
+                "td",
+                "Merge two frames into one",
+                "将两帧合并为一帧"
+            ],
+            [
+                "td",
+                "Get a list of models in H<sub>2</sub>O",
+                "获取H<sub>2</sub>O中的模型列表"
+            ],
+            [
+                "td",
+                "Get a list of grid search results in H<sub>2</sub>O",
+                "获得H<sub>2</sub>O中的网格搜索结果列表"
+            ],
+            [
+                "td",
+                "Get a list of predictions in H<sub>2</sub>O",
+                "获得H<sub>2</sub>O中的预测列表"
+            ],
+            [
+                "td",
+                "Get a list of jobs running in H<sub>2</sub>O",
+                "获取在H<sub>2</sub>O中运行的作业列表"
+            ],
+            [
+                "td",
+                "Automatically train and tune many models",
+                "自动训练和调整许多模型"
+            ],
+            [
+                "td",
+                "Build a model",
+                "建立一个模型"
+            ],
+            [
+                "td",
+                "Import a saved model",
+                "导入保存的模型"
+            ],
+            [
+                "td",
+                "Make a prediction",
+                "做一个预测"
+            ]
+        ],
+        "label": [
+            [
+                "h3",
+                "Assistance",
+                "帮助"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ],
+            [
+                "th",
+                "Routine",
+                "例行程序"
+            ],
+            [
+                "th",
+                "Description",
+                "说明"
+            ]
+        ]
+    },
+    "flow-predict-output": {
+        "label": [
+            [
+                "h3",
+                "Prediction",
+                "预测"
+            ],
+            [
+                "label",
+                "Actions:",
+                "动作:"
+            ],
+            [
+                "button",
+                "Inspect",
+                "检查"
+            ],
+            [
+                "button",
+                "Combine predictions with frame",
+                "将预测与帧结合起来"
+            ]
+        ]
+    },
+    "flow-import-file-output": {
+        "label": []
+    },
+    "flow-model-parameter-dropdown": {
+        "label": [
+            [
+                "span",
+                "*",
+                ""
+            ],
+            [
+                "input[title]",
+                "Check to enable grid search on this parameter",
+                "",
+                "title"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ]
+        ]
+    },
+    "flow-network-test-output": {
+        "label": [
+            [
+                "h3",
+                "Network Test",
+                ""
+            ]
+        ]
+    },
+    "flow-no-assist": {
+        "label": [
+            [
+                "h3",
+                "Uh-oh",
+                ""
+            ],
+            [
+                "h3",
+                "Assist me&hellip;",
+                ""
+            ]
+        ]
+    },
+    "flow-predict-input": {
+        "label": [
+            [
+                "h3",
+                "Predict",
+                "预测"
+            ],
+            [
+                "label",
+                "Name:",
+                "名称:"
+            ],
+            [
+                "label",
+                "Model:",
+                "模型:"
+            ],
+            [
+                "label",
+                "Frame:",
+                "帧:"
+            ],
+            [
+                "label",
+                "Compute Reconstruction Error:",
+                "计算重建错误:"
+            ],
+            [
+                "label",
+                "Compute Deep Features Hidden Layer:",
+                "计算深层特征隐藏层:"
+            ],
+            [
+                "span",
+                "Hidden Layer #:",
+                "隐藏层#:"
+            ],
+            [
+                "label",
+                "Compute Leaf Node Assignment:",
+                "计算叶节点分配:"
+            ],
+            [
+                "label",
+                "Compute Exemplar Index:",
+                "计算范例指数:"
+            ],
+            [
+                "span",
+                "Exemplar Index #:",
+                ""
+            ],
+            [
+                "label",
+                "Actions:",
+                "动作:"
+            ],
+            [
+                "span",
+                "Predict",
+                "预测"
+            ]
+        ]
+    },
+    "flow-import-model-output": {
+        "label": [
+            [
+                "span",
+                "View Model",
+                ""
+            ]
+        ]
+    },
+    "flow-model-parameter-models": {
+        "label": [
+            [
+                "span",
+                "*",
+                ""
+            ],
+            [
+                "h3",
+                "Show models compatible with frame:",
+                ""
+            ],
+            [
+                "input[title]",
+                "Select or deselect all",
+                "全部选择或取消",
+                "title"
+            ],
+            [
+                "h3",
+                "Select All",
+                ""
+            ],
+            [
+                "input[title]",
+                "Check to enable grid search on this parameter",
+                "",
+                "title"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ]
+        ]
+    },
+    "flow-jobs-output": {
+        "label": [
+            [
+                "h3",
+                "Jobs",
+                "作业"
+            ],
+            [
+                "blockquote",
+                "Your H<sub>2</sub>O could has no jobs.",
+                "你的H<sub>2</sub>O可能没有作业。"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ],
+            [
+                "th",
+                "Type",
+                "类型"
+            ],
+            [
+                "th",
+                "Destination",
+                "目标"
+            ],
+            [
+                "th",
+                "Description",
+                "说明"
+            ],
+            [
+                "th",
+                "Start Time",
+                "开始时间"
+            ],
+            [
+                "th",
+                "End Time",
+                "结束时间"
+            ],
+            [
+                "th",
+                "Run Time",
+                "运行时间"
+            ],
+            [
+                "th",
+                "Status",
+                "状态"
+            ],
+            [
+                "a",
+                "",
+                ""
+            ],
+            [
+                "button",
+                "Stop",
+                "停止"
+            ],
+            [
+                "button",
+                "Refresh",
+                "刷新"
+            ]
+        ]
+    },
+    "flow-inspect-output": {
+        "label": [
+            [
+                "h4",
+                "Schema",
+                "模式"
+            ],
+            [
+                "th",
+                "Name",
+                "名称"
+            ],
+            [
+                "th",
+                "Type",
+                "类型"
+            ],
+            [
+                "th",
+                "Actions",
+                "动作"
+            ],
+            [
+                "button",
+                "View",
+                "视图"
+            ],
+            [
+                "button",
+                "Plot",
+                "图表"
+            ]
+        ]
+    },
+    "flow-partial-dependence-input": {
+        "label": [
+            [
+                "h3",
+                "Partial Dependence",
+                "部分依赖"
+            ],
+            [
+                "label",
+                "Save Destination PDP as:",
+                "保存目标PDP为:"
+            ],
+            [
+                "label",
+                "Model:",
+                "模型："
+            ],
+            [
+                "label",
+                "Frame:",
+                "帧："
+            ],
+            [
+                "th",
+                "row_index",
+                ""
+            ],
+            [
+                "td",
+                "Row for which partial dependence will be calculated instead of the whole input frame (-1 for all).",
+                "将计算部分依赖关系而不是整个输入帧的行(对所有输入帧计算-1)。"
+            ],
+            [
+                "th",
+                "nbins",
+                ""
+            ],
+            [
+                "td",
+                "How many levels should PDP compute. More levels will make it slower.",
+                "PDP应该计算多少层。更多的级别会使它变慢。"
+            ],
+            [
+                "th",
+                "target",
+                ""
+            ],
+            [
+                "td",
+                "Target class for multinomial classification.",
+                "用于多项分类的目标类。"
+            ],
+            [
+                "label",
+                "Select columns?",
+                "是否选择列？"
+            ],
+            [
+                "td",
+                "Checking this will allow you to select custom columns for PDP. By default, the top 10 features are used. Those features are sorted by variable importance.",
+                "检查此选项将允许您为PDP选择自定义列。默认情况下，使用前10个特性。这些特征是根据不同的重要性排序的。"
+            ],
+            [
+                "label",
+                "Available columns:",
+                "可用的列:"
+            ],
+            [
+                "input[placeholder]",
+                "Search...",
+                "搜索...",
+                "placeholder"
+            ],
+            [
+                "label",
+                "2D PDP Columns:",
+                "2D PDP 列："
+            ],
+            [
+                "td",
+                "Select lists of column name pairs to plot 2D partial dependence plot for.",
+                "选择要绘制2D部分依赖图的列名对列表。"
+            ],
+            [
+                "label",
+                "Actions:",
+                "动作:"
+            ],
+            [
+                "button",
+                "Compute",
+                "计算"
+            ]
+        ]
+    },
+    "flow-model-parameter-group": {
+        "label": [
+            [
+                "th",
+                "style='text-align:left;text-transform:inherit')",
+                ""
+            ],
+            [
+                "th",
+                "style='text-align:left;text-transform:inherit')",
+                ""
+            ]
+        ]
+    },
+    "flow-model-parameter-textbox": {
+        "label": [
+            [
+                "span",
+                "*",
+                ""
+            ],
+            [
+                "input[title]",
+                "Check to enable grid search on this parameter",
+                "",
+                "title"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ]
+        ]
+    },
+    "flow-merge-frames-input": {
+        "label": [
+            [
+                "h3",
+                "Merge Frames",
+                "合并帧"
+            ],
+            [
+                "label",
+                "Save merged frame as:",
+                "保存合并帧为:"
+            ],
+            [
+                "label",
+                "Left frame:",
+                "左侧帧:"
+            ],
+            [
+                "label",
+                "Left column:",
+                "左侧列:"
+            ],
+            [
+                "label",
+                "Include all left rows",
+                "包括所有左侧行"
+            ],
+            [
+                "label",
+                "Right frame:",
+                "右侧帧:"
+            ],
+            [
+                "label",
+                "Right column:",
+                "右侧列:"
+            ],
+            [
+                "label",
+                "Include all right rows",
+                "包括所有右侧行"
+            ],
+            [
+                "label",
+                "Actions:",
+                "行动:"
+            ],
+            [
+                "span",
+                "Merge",
+                "合并"
+            ]
+        ]
+    },
+    "flow-delete-objects-output": {
+        "label": []
+    },
+    "flow-import-files-output": {
+        "label": [
+            [
+                "th",
+                "Files",
+                ""
+            ],
+            [
+                "th",
+                "Actions",
+                "动作"
+            ]
+        ]
+    },
+    "flow-column-summary-output": {
+        "label": [
+            [
+                "h3",
+                "Summary:",
+                ""
+            ],
+            [
+                "th",
+                "Actions",
+                "动作"
+            ]
+        ]
+    },
+    "flow-frames-output": {
+        "label": [
+            [
+                "h3",
+                "Frames",
+                "帧（Frames）"
+            ],
+            [
+                "blockquote",
+                "Your H<sub>2</sub>O could has no frames.",
+                "你的H<sub>2</sub>O可能没有帧。"
+            ],
+            [
+                "h3",
+                "Import files",
+                "导入文件"
+            ],
+            [
+                "th",
+                "",
+                ""
+            ],
+            [
+                "input[title]",
+                "Select or deselect all",
+                "全部选择或取消",
+                "title"
+            ],
+            [
+                "th",
+                "Type",
+                "类型"
+            ],
+            [
+                "th",
+                "ID",
+                "ID"
+            ],
+            [
+                "th",
+                "Rows",
+                "行数"
+            ],
+            [
+                "th",
+                "Columns",
+                "列数"
+            ],
+            [
+                "th",
+                "Size",
+                "大小"
+            ],
+            [
+                "a",
+                "",
+                ""
+            ],
+            [
+                "button",
+                "Predict on selected frames",
+                "预测选中的帧"
+            ],
+            [
+                "button",
+                "Delete selected frames",
+                "删除选中的帧"
+            ],
+            [
+                "button",
+                "Parse",
+                "解析"
+            ],
+            [
+                "button",
+                "Build Model",
+                "构建模型"
+            ],
+            [
+                "button",
+                "Run AutoML",
+                "运行AutoML"
+            ],
+            [
+                "button",
+                "Predict",
+                "预测"
+            ],
+            [
+                "button",
+                "Inspect",
+                "检查"
+            ]
+        ]
+    },
+    "flow-log-file-output": {
+        "label": [
+            [
+                "span",
+                "Log",
+                ""
+            ],
+            [
+                "label",
+                "Select Log File Type:",
+                ""
+            ],
+            [
+                "label",
+                "Select Node:",
+                ""
+            ]
+        ]
+    },
+    "flow-import-bq-table-input": {
+        "label": [
+            [
+                "h3",
+                "Import BigQuery Table",
+                ""
+            ],
+            [
+                "th",
+                "Project:",
+                ""
+            ],
+            [
+                "input[placeholder]",
+                "Enter a BigQuery project ID.",
+                "",
+                "placeholder"
+            ],
+            [
+                "th",
+                "Dataset:",
+                ""
+            ],
+            [
+                "input[placeholder]",
+                "Enter a BigQuery dataset name.",
+                "",
+                "placeholder"
+            ],
+            [
+                "th",
+                "Table:",
+                ""
+            ],
+            [
+                "input[placeholder]",
+                "Enter a BigQuery table name.",
+                "",
+                "placeholder"
+            ],
+            [
+                "th",
+                "Columns:",
+                ""
+            ],
+            [
+                "input[placeholder]",
+                "Enter a comma-separated list of column names to import. Default is to import all columns.",
+                "",
+                "placeholder"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ],
+            [
+                "th",
+                "Actions:",
+                "动作:"
+            ],
+            [
+                "h3",
+                "Import",
+                ""
+            ]
+        ]
+    },
+    "flow-model-parameter-checkbox": {
+        "label": [
+            [
+                "span",
+                "*",
+                ""
+            ],
+            [
+                "input[title]",
+                "Check to enable grid search on this parameter",
+                "",
+                "title"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ]
+        ]
+    },
+    "flow-import-sql-table-output": {
+        "label": [
+            [
+                "span",
+                "View",
+                ""
+            ]
+        ]
+    },
+    "flow-automl-input": {
+        "label": [
+            [
+                "h3",
+                "Run AutoML",
+                "运行AutoML"
+            ]
+        ]
+    },
+    "flow-job-output": {
+        "label": [
+            [
+                "h3",
+                "Job",
+                "作业"
+            ],
+            [
+                "th",
+                "Run Time",
+                "运行时间"
+            ],
+            [
+                "th",
+                "Remaining Time",
+                "剩余时间"
+            ],
+            [
+                "th",
+                "Type",
+                "类型"
+            ],
+            [
+                "th",
+                "Key",
+                "键"
+            ],
+            [
+                "a",
+                "",
+                ""
+            ],
+            [
+                "th",
+                "Description",
+                "说明"
+            ],
+            [
+                "th",
+                "Status",
+                "状态"
+            ],
+            [
+                "th",
+                "Progress",
+                "进度"
+            ],
+            [
+                "th",
+                "Messages",
+                "消息"
+            ],
+            [
+                "th",
+                "Actions",
+                "动作"
+            ],
+            [
+                "button",
+                "View",
+                "视图"
+            ],
+            [
+                "button",
+                "Cancel Job",
+                "取消作业"
+            ]
+        ]
+    },
+    "flow-grids-output": {
+        "label": [
+            [
+                "h3",
+                "Grids",
+                "网格"
+            ],
+            [
+                "blockquote",
+                "Your H<sub>2</sub>O could has no grid search results.",
+                "你的H<sub>2</sub>O可能没有网格搜索结果。"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ],
+            [
+                "th",
+                "Key",
+                "键"
+            ],
+            [
+                "th",
+                "Models",
+                "模型"
+            ],
+            [
+                "button",
+                "Build a model",
+                "建立一个模型"
+            ]
+        ]
+    },
+    "flow-plot-input": {
+        "label": [
+            [
+                "label",
+                "Type:",
+                ""
+            ],
+            [
+                "label",
+                "X-Axis:",
+                ""
+            ],
+            [
+                "label",
+                "Y-Axis:",
+                ""
+            ],
+            [
+                "label",
+                "Color:",
+                ""
+            ],
+            [
+                "label",
+                "Actions:",
+                "动作:"
+            ]
+        ]
+    },
+    "flow-dataframes-output": {
+        "label": [
+            [
+                "h3",
+                "Spark's Data Frames",
+                ""
+            ],
+            [
+                "th",
+                "ID",
+                ""
+            ],
+            [
+                "th",
+                "Partitions",
+                ""
+            ]
+        ]
+    },
+    "flow-split-frame-input": {
+        "label": [
+            [
+                "h3",
+                "Split Frame",
+                "分割帧"
+            ],
+            [
+                "label",
+                "Frame:",
+                "帧"
+            ],
+            [
+                "label",
+                "Splits:",
+                "分割"
+            ],
+            [
+                "th",
+                "Ratio",
+                "比率"
+            ],
+            [
+                "th",
+                "Key",
+                "键"
+            ],
+            [
+                "span[title]",
+                "Delete this split",
+                "删除这个分割",
+                "title"
+            ],
+            [
+                "td",
+                "&nbsp;",
+                ""
+            ],
+            [
+                "label",
+                "Seed:",
+                "种子（Seed）:"
+            ],
+            [
+                "a",
+                "Add a new split",
+                "添加一个新的分割"
+            ],
+            [
+                "button",
+                "Create",
+                "创建"
+            ]
+        ]
+    },
+    "flow-parse-input": {
+        "label": [
+            [
+                "h3",
+                "Setup Parse",
+                ""
+            ],
+            [
+                "th",
+                "Sources",
+                ""
+            ],
+            [
+                "th",
+                "ID",
+                ""
+            ],
+            [
+                "th",
+                "Parser",
+                ""
+            ],
+            [
+                "th",
+                "Separator",
+                ""
+            ],
+            [
+                "th",
+                "Column Headers",
+                ""
+            ],
+            [
+                "span",
+                "Auto",
+                ""
+            ],
+            [
+                "span",
+                "First row contains column names",
+                ""
+            ],
+            [
+                "span",
+                "First row contains data",
+                ""
+            ],
+            [
+                "th",
+                "Options",
+                ""
+            ],
+            [
+                "span",
+                "Enable single quotes as a field quotation character",
+                ""
+            ],
+            [
+                "span",
+                "Delete on done",
+                ""
+            ],
+            [
+                "input[placeholder]",
+                "Search by column name...",
+                "",
+                "placeholder"
+            ],
+            [
+                "span",
+                "Previous page",
+                ""
+            ],
+            [
+                "span",
+                "Next page",
+                ""
+            ],
+            [
+                "h3",
+                "Parse",
+                ""
+            ]
+        ]
+    },
+    "flow-import-files": {
+        "label": [
+            [
+                "h3",
+                "Import Files",
+                "导入文件"
+            ],
+            [
+                "th",
+                "Search:",
+                "搜索:"
+            ],
+            [
+                "input[placeholder]",
+                "Enter a file or directory path and press the Enter key",
+                "输入文件或目录路径并按Enter键",
+                "placeholder"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ],
+            [
+                "th",
+                "Search Results:",
+                "搜索结果:"
+            ],
+            [
+                "h3",
+                "|",
+                ""
+            ],
+            [
+                "a",
+                " Add all",
+                "全部添加"
+            ],
+            [
+                "td",
+                "(All files added)",
+                "（全部文件已添加）"
+            ],
+            [
+                "th",
+                "Selected Files:",
+                "选择的文件:"
+            ],
+            [
+                "h3",
+                "|",
+                ""
+            ],
+            [
+                "a",
+                "Clear All",
+                "全部清除"
+            ],
+            [
+                "th",
+                "Actions:",
+                "行动:"
+            ],
+            [
+                "h3",
+                "Import",
+                "导入"
+            ]
+        ]
+    },
+    "flow-predicts-output": {
+        "label": [
+            [
+                "h3",
+                "Predictions",
+                "预测"
+            ],
+            [
+                "blockquote",
+                "Your H<sub>2</sub>O could has no predictions.",
+                "你的H<sub>2</sub>O可能没有预测。"
+            ],
+            [
+                "th",
+                "",
+                ""
+            ],
+            [
+                "input[title]",
+                "Select or deselect all",
+                "全部选择或取消",
+                "title"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ],
+            [
+                "th",
+                "Model",
+                "模型"
+            ],
+            [
+                "th",
+                "Frame",
+                "帧"
+            ],
+            [
+                "th",
+                "Actions",
+                "动作"
+            ],
+            [
+                "button",
+                "View",
+                "视图"
+            ],
+            [
+                "button",
+                "Make a prediction",
+                "做一个预测"
+            ]            
+        ]
+    },
+    "flow-leaderboard-output": {
+        "label": [
+            [
+                "h3",
+                "Leaderboard",
+                ""
+            ],
+            [
+                "h3",
+                "Stop Monitoring",
+                ""
+            ],
+            [
+                "h3",
+                "Monitor Live",
+                ""
+            ]
+        ]
+    },
+    "flow-partial-dependence-output": {
+        "label": [
+            [
+                "th",
+                "Model ID:",
+                ""
+            ],
+            [
+                "th",
+                "Frame ID:",
+                ""
+            ],
+            [
+                "th",
+                "Show PDP Data Table?",
+                ""
+            ]
+        ]
+    },
+    "flow-cancel-job-output": {
+        "label": []
+    },
+    "flow-impute-input": {
+        "label": [
+            [
+                "h3",
+                "Impute",
+                ""
+            ],
+            [
+                "th",
+                "Frame",
+                ""
+            ],
+            [
+                "th",
+                "Column",
+                ""
+            ],
+            [
+                "th",
+                "Method",
+                ""
+            ],
+            [
+                "th",
+                "Combine Method",
+                ""
+            ],
+            [
+                "th",
+                "Group By",
+                ""
+            ]
+        ]
+    },
+    "flow-dataframe-output": {
+        "label": []
+    },
+    "flow-file-upload-dialog": {
+        "label": [
+            [
+                "span",
+                "×",
+                ""
+            ],
+            [
+                "span",
+                "Close",
+                ""
+            ]
+        ]
+    },
+    "flow-grid-output": {
+        "label": [
+            [
+                "th",
+                "style='font-size:inherit')",
+                ""
+            ],
+            [
+                "input[title]",
+                "Select or deselect all",
+                "全部选择或取消",
+                "title"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ],
+            [
+                "th",
+                "Key",
+                ""
+            ],
+            [
+                "th",
+                "Actions",
+                "动作"
+            ]
+        ]
+    },
+    "flow-file-open-dialog": {
+        "label": [
+            [
+                "span",
+                "×",
+                ""
+            ],
+            [
+                "span",
+                "Close",
+                ""
+            ]
+        ]
+    },
+    "flow-scala-intp-output": {
+        "label": []
+    },
+    "flow-export-frame-input": {
+        "label": [
+            [
+                "label",
+                "Frame:",
+                ""
+            ],
+            [
+                "label",
+                "Path:",
+                ""
+            ],
+            [
+                "label",
+                "Overwrite:",
+                ""
+            ],
+            [
+                "label",
+                "Actions:",
+                "动作:"
+            ],
+            [
+                "span",
+                "Export",
+                ""
+            ]
+        ]
+    },
+    "flow-export-frame-output": {
+        "label": []
+    },
+    "flow-import-sql-table-input": {
+        "label": [
+            [
+                "h3",
+                "Import SQL Table",
+                "导入SQL表"
+            ],
+            [
+                "th",
+                "Connection URL:",
+                "连接网址:"
+            ],
+            [
+                "input[placeholder]",
+                "Enter URL of the SQL database as specified by the JDBC.",
+                "输入JDBC指定的SQL数据库的URL。",
+                "placeholder"
+            ],
+            [
+                "th",
+                "Table:",
+                "表:"
+            ],
+            [
+                "input[placeholder]",
+                "Enter a name of SQL table.",
+                "输入SQL表的名称",
+                "placeholder"
+            ],
+            [
+                "th",
+                "Columns:",
+                "列:"
+            ],
+            [
+                "input[placeholder]",
+                "Enter a comma-separated list of column names to import. Default is to import all columns.",
+                "输入要导入的以逗号分隔的列名列表。默认情况下是导入所有列。",
+                "placeholder"
+            ],
+            [
+                "th",
+                "Username:",
+                "用户名:"
+            ],
+            [
+                "input[placeholder]",
+                "Enter a username for SQL server.",
+                "输入SQL服务器的用户名。",
+                "placeholder"
+            ],
+            [
+                "th",
+                "Password:",
+                "密码:"
+            ],
+            [
+                "input[placeholder]",
+                "Enter a password for SQL server.",
+                "输入SQL服务器的密码。",
+                "placeholder"
+            ],
+            [
+                "th",
+                "Fetch mode:",
+                "提取模式:"
+            ],
+            [
+                "option",
+                "DISTRIBUTED",
+                "分布式"
+            ],
+            [
+                "option",
+                "SINGLE",
+                "单一"
+            ],
+            [
+                "th",
+                "Actions:",
+                "动作:"
+            ],
+            [
+                "button",
+                "Import",
+                "导入"
+            ]
+        ]
+    },
+    "flow-timeline-output": {
+        "label": [
+            [
+                "span",
+                "Timeline",
+                ""
+            ],
+            [
+                "h3",
+                "Stop",
+                ""
+            ],
+            [
+                "h3",
+                "Refresh",
+                ""
+            ]
+        ]
+    },
+    "flow-stacktrace-output": {
+        "label": [
+            [
+                "span",
+                "Stack Trace",
+                ""
+            ],
+            [
+                "h3",
+                "Select Node:",
+                ""
+            ]
+        ]
+    },
+    "flow-frame-data-output": {
+        "label": [
+            [
+                "span",
+                "Previous 20 Columns",
+                ""
+            ],
+            [
+                "span",
+                "Next 20 Columns",
+                ""
+            ],
+            [
+                "span",
+                "Previous 20 Columns",
+                ""
+            ],
+            [
+                "span",
+                "Next 20 Columns",
+                ""
+            ]
+        ]
+    },
+    "flow-model-parameter-list": {
+        "label": [
+            [
+                "span",
+                "*",
+                ""
+            ],
+            [
+                "input[placeholder]",
+                "Search...",
+                "",
+                "placeholder"
+            ],
+            [
+                "h3",
+                "Only show columns with more than&nbsp;",
+                ""
+            ],
+            [
+                "input[placeholder]",
+                "0",
+                "",
+                "placeholder"
+            ],
+            [
+                "h3",
+                "% missing values.",
+                ""
+            ],
+            [
+                "input[title]",
+                "Check to enable grid search on this parameter",
+                "",
+                "title"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ]
+        ]
+    },
+    "flow-plot-output": {
+        "label": []
+    },
+    "flow-split-frame-output": {
+        "label": [
+            [
+                "th",
+                "Type",
+                ""
+            ],
+            [
+                "th",
+                "Key",
+                ""
+            ],
+            [
+                "th",
+                "Ratio",
+                ""
+            ],
+            [
+                "a",
+                "",
+                ""
+            ]
+        ]
+    },
+    "flow-create-frame-input": {
+        "label": [
+            [
+                "h3",
+                "Create a Frame",
+                ""
+            ],
+            [
+                "label",
+                "Name",
+                ""
+            ],
+            [
+                "td",
+                "The name of the frame.",
+                ""
+            ],
+            [
+                "label",
+                "Rows",
+                ""
+            ],
+            [
+                "td",
+                "Number of rows",
+                ""
+            ],
+            [
+                "label",
+                "Columns",
+                ""
+            ],
+            [
+                "td",
+                "Number of data columns (in addition to the first response column)",
+                ""
+            ],
+            [
+                "label",
+                "Randomize",
+                ""
+            ],
+            [
+                "td",
+                "Whether frame should be randomized",
+                ""
+            ],
+            [
+                "label",
+                "Seed",
+                ""
+            ],
+            [
+                "td",
+                "Random number seed",
+                ""
+            ],
+            [
+                "label",
+                "Seed for Column Types",
+                ""
+            ],
+            [
+                "td",
+                "Random number seed for column types (-1 to use the main seed)",
+                ""
+            ],
+            [
+                "label",
+                "Value",
+                ""
+            ],
+            [
+                "td",
+                "Constant value (for randomize=false)",
+                ""
+            ],
+            [
+                "label",
+                "Factors",
+                ""
+            ],
+            [
+                "td",
+                "Factor levels for categorical variables",
+                ""
+            ],
+            [
+                "label",
+                "Categorical Fraction",
+                ""
+            ],
+            [
+                "td",
+                "Fraction of categorical columns (for randomize=true)",
+                ""
+            ],
+            [
+                "label",
+                "Integer Fraction",
+                ""
+            ],
+            [
+                "td",
+                "Fraction of integer columns (for randomize=true)",
+                ""
+            ],
+            [
+                "label",
+                "Binary Fraction",
+                ""
+            ],
+            [
+                "td",
+                "Fraction of binary columns (for randomize=true)",
+                ""
+            ],
+            [
+                "label",
+                "Binary Ones Fraction",
+                ""
+            ],
+            [
+                "td",
+                "Fraction of 1's in binary columns",
+                ""
+            ],
+            [
+                "label",
+                "Time Fraction",
+                ""
+            ],
+            [
+                "td",
+                "Fraction of date/time columns (for randomize=true)",
+                ""
+            ],
+            [
+                "label",
+                "String Fraction",
+                ""
+            ],
+            [
+                "td",
+                "Fraction of string columns (for randomize=true)",
+                ""
+            ],
+            [
+                "label",
+                "Missing Fraction",
+                ""
+            ],
+            [
+                "td",
+                "Fraction of missing values",
+                ""
+            ],
+            [
+                "label",
+                "Response Factors",
+                ""
+            ],
+            [
+                "td",
+                "Number of factor levels of the first column (1=real, 2=binomial, N=multinomial)",
+                ""
+            ],
+            [
+                "label",
+                "Real Range",
+                ""
+            ],
+            [
+                "td",
+                "Range for real variables (-range ... range)",
+                ""
+            ],
+            [
+                "label",
+                "Integer Range",
+                ""
+            ],
+            [
+                "td",
+                "Range for integer variables (-range ... range)",
+                ""
+            ],
+            [
+                "label",
+                "Has Response?",
+                ""
+            ],
+            [
+                "td",
+                "Whether an additional response column should be generated",
+                ""
+            ]
+        ]
+    },
+    "flow-model-input": {
+        "label": [
+            [
+                "h3",
+                "Build a Model",
+                "建立一个模型"
+            ],
+            [
+                "label",
+                "Select an algorithm:",
+                "选择一种算法:"
+            ],
+            [
+                "button",
+                "Build Model",
+                "建立模型"
+            ]
+        ]
+    },
+    "flow-model-parameter-keyvalues": {
+        "label": [
+            [
+                "span",
+                "*",
+                ""
+            ],
+            [
+                "input[title]",
+                "Check to enable grid search on this parameter",
+                "",
+                "title"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ]
+        ]
+    },
+    "flow-profile-output": {
+        "label": [
+            [
+                "span",
+                "Profiler",
+                ""
+            ],
+            [
+                "h3",
+                "Select Node:",
+                ""
+            ]
+        ]
+    },
+    "flow-model-output": {
+        "label": [
+            [
+                "h3",
+                "Model",
+                ""
+            ],
+            [
+                "th",
+                "Model ID:",
+                ""
+            ],
+            [
+                "th",
+                "Algorithm:",
+                ""
+            ],
+            [
+                "th",
+                "Actions:",
+                "动作:"
+            ],
+            [
+                "h3",
+                "Stop",
+                ""
+            ],
+            [
+                "h3",
+                "Refresh",
+                ""
+            ],
+            [
+                "h3",
+                "Download POJO",
+                ""
+            ],
+            [
+                "h3",
+                "Download Model Deployment Package (MOJO)",
+                ""
+            ],
+            [
+                "th",
+                "Parameter",
+                ""
+            ],
+            [
+                "th",
+                "Value",
+                ""
+            ],
+            [
+                "th",
+                "Description",
+                ""
+            ],
+            [
+                "h3",
+                "Preview POJO",
+                ""
+            ]
+        ]
+    },
+    "flow-frame-output": {
+        "label": [
+            [
+                "th",
+                "Actions:",
+                "动作:"
+            ],
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ],
+            [
+                "th",
+                "Rows",
+                ""
+            ],
+            [
+                "th",
+                "Columns",
+                ""
+            ],
+            [
+                "th",
+                "Compressed Size",
+                ""
+            ],
+            [
+                "td",
+                "&nbsp;",
+                ""
+            ],
+            [
+                "span",
+                "Previous 20 Columns",
+                ""
+            ],
+            [
+                "span",
+                "Next 20 Columns",
+                ""
+            ]
+        ]
+    },
+    "flow-merge-frames-output": {
+        "label": [
+            [
+                "th",
+                "Type",
+                ""
+            ],
+            [
+                "th",
+                "Key",
+                ""
+            ],
+            [
+                "a",
+                "",
+                ""
+            ]
+        ]
+    },
+    "flow-export-model-output": {
+        "label": []
+    },
+    "flow-flow-h2oframe-output": {
+        "label": []
+    },
+    "flow-export-model-input": {
+        "label": [
+            [
+                "h3",
+                "Export Model",
+                "导出模型"
+            ],
+            [
+                "label",
+                "Model:",
+                "模型："
+            ],
+            [
+                "label",
+                "Path:",
+                "路径："
+            ],
+            [
+                "label",
+                "Overwrite:",
+                "覆盖："
+            ],
+            [
+                "label",
+                "Actions:",
+                "动作:"
+            ],
+            [
+                "button",
+                "Export",
+                "导出"
+            ],
+            [
+                "button",
+                "Export Model Deployment Package (MOJO)",
+                "导出模型部署包(MOJO)"
+            ]
+        ]
+    },
+    "flow-h2oframe-output": {
+        "label": []
+    },
+    "flow-navigation": {
+        "label": []
+    },
+    "flow-status": {
+        "label": []
+    },
+    "flow-html": {
+        "label": []
+    },
+    "flow-raw": {
+        "label": []
+    },
+    "flow-object": {
+        "label": []
+    },
+    "flow-form-textarea": {
+        "label": []
+    },
+    "flow-form-dropdown": {
+        "label": []
+    },
+    "flow-failure": {
+        "label": [
+            [
+                "h3",
+                "&nbsp;",
+                ""
+            ]
+        ]
+    },
+    "flow-navbar": {
+        "label": [
+            [
+                "a",
+                "",
+                ""
+            ]
+        ]
+    },
+    "flow-help": {
+        "label": [
+            [
+                "h3",
+                "Help",
+                ""
+            ]
+        ]
+    },
+    "flow-keyboard-help-table": {
+        "label": []
+    },
+    "flow-browser": {
+        "label": [
+            [
+                "h3",
+                "Flows",
+                ""
+            ],
+            [
+                "h3",
+                "You have no saved notebooks. To save a notebook, click the",
+                ""
+            ],
+            [
+                "h3",
+                "&nbsp;icon, or choose File",
+                ""
+            ],
+            [
+                "h3",
+                "&nbsp;Save from the application menu.",
+                ""
+            ]
+        ]
+    },
+    "flow-outline": {
+        "label": [
+            [
+                "h3",
+                "Outline",
+                ""
+            ]
+        ]
+    },
+    "flow-form-checkbox": {
+        "label": []
+    },
+    "flow-json": {
+        "label": []
+    },
+    "flow-mixins": {
+        "label": [
+            [
+                "a",
+                "}, click:${action}`)",
+                ""
+            ],
+            [
+                "a",
+                "!=caption",
+                ""
+            ]
+        ]
+    },
+    "flow-toolbar": {
+        "label": []
+    },
+    "flow-clipboard": {
+        "label": [
+            [
+                "h3",
+                "Clipboard",
+                "剪贴板"
+            ],
+            [
+                "h3",
+                "My Clips",
+                "我的"
+            ],
+            [
+                "h3",
+                "You have no clips. To save a clip into this list, click the",
+                "您没有剪辑。要将片段保存到此列表中，请单击"
+            ],
+            [
+                "h3",
+                "&nbsp; paperclip next to the cell.",
+                "&nbsp; 单元旁边的回形针。"
+            ],
+            [
+                "h3",
+                "Click on a clip to insert it into your notebook. Click the",
+                "单击一个剪辑将其插入笔记本。点击"
+            ],
+            [
+                "h3",
+                "&nbsp;button to insert and execute the clip.",
+                "&nbsp;按钮插入和执行剪辑。"
+            ],
+            [
+                "h3",
+                "System",
+                "系统"
+            ],
+            [
+                "h3",
+                "Trash",
+                "废弃"
+            ]
+        ]
+    },
+    "flow-h4": {
+        "label": []
+    },
+    "flow-dom": {
+        "label": []
+    },
+    "flow-h3": {
+        "label": []
+    },
+    "flow-form-textbox": {
+        "label": []
+    },
+    "flow-about-dialog": {
+        "label": []
+    },
+    "flow-confirm-dialog": {
+        "label": [
+            [
+                "span",
+                "×",
+                ""
+            ],
+            [
+                "span",
+                "Close",
+                ""
+            ],
+            [
+                "h4",
+                "Confirm",
+                "确认"
+            ],
+            [
+                "div",
+                "This action will replace your active notebook.<br>Are you sure you want to continue?",
+                "此操作将取代您的活动笔记本。<br>您确定要继续吗?"
+            ],
+            [
+                "div",
+                "This action will replace your active notebook.\nAre you sure you want to continue?",
+                "此操作将取代您的活动笔记本。\n您确定要继续吗?"
+            ],
+            [
+                "div",
+                "Are you sure you want to delete this notebook?",
+                "你确定要删除这个笔记本吗?"
+            ],
+            [
+                "div",
+                "A notebook with that name already exists.\nDo you want to replace it with the one you're saving?",
+                "这个名字的笔记本已经存在。\n你想把它替换成你正在保存的那个吗?"
+            ],
+            [
+                "div",
+                "Are you sure you want to delete this frame?",
+                "您确定要删除此帧吗?"
+            ],
+            [
+                "div",
+                "Are you sure you want to delete these frames?",
+                "您确定要删除这些帧吗?"
+            ],
+            [
+                "div",
+                "Are you sure you want to delete this model?",
+                "您确定要删除此模型吗?"
+            ],
+            [
+                "div",
+                "Are you sure you want to delete these models?",
+                "您确定要删除这些模型吗?"
+            ],
+            [
+                "button",
+                "Cancel",
+                "取消"
+            ],
+            [
+                "button",
+                "Keep",
+                "保留"
+            ],
+            [
+                "button",
+                "Create New Notebook",
+                "创建新的笔记本"
+            ],
+            [
+                "button",
+                "Load Notebook",
+                "载入笔记本"
+            ],
+            [
+                "button",
+                "Delete",
+                "删除"
+            ],
+            [
+                "button",
+                "Replace",
+                "替换"
+            ],
+            [
+                "button",
+                "Delete Frame",
+                "删除"
+            ],
+            [
+                "button",
+                "Delete Frames",
+                "删除"
+            ],
+            [
+                "button",
+                "Delete Model",
+                "删除"
+            ],
+            [
+                "button",
+                "Delete Models",
+                "删除"
+            ]
+        ]
+    },
+    "flow-cell": {
+        "label": []
+    },
+    "flow-keyboard-help-dialog": {
+        "label": []
+    },
+    "flow-form-text": {
+        "label": []
+    },
+    "flow-form-listbox": {
+        "label": []
+    },
+    "flow-form-html": {
+        "label": []
+    },
+    "flow-form-button": {
+        "label": [
+            [
+                "th",
+                "&nbsp;",
+                ""
+            ]
+        ]
+    },
+    "flow-object-part": {
+        "label": [
+            [
+                "h3",
+                ":",
+                ""
+            ],
+            [
+                "h3",
+                ":",
+                ""
+            ]
+        ]
+    },
+    "flow-form": {
+        "label": []
+    },
+    "flow-sidebar": {
+        "label": []
+    },
+    "flow-alert-dialog": {
+        "label": [
+            [
+                "span",
+                "×",
+                ""
+            ]
+        ]
+    },
+    "flow-notebook": {
+        "label": [
+            [
+                "span",
+                "STOP",
+                "停止"
+            ]
+        ]
+    },
+    "flow-h5": {
+        "label": []
+    },
+    "flow-h1": {
+        "label": []
+    },
+    "flow-h2": {
+        "label": []
+    },
+    "flow-clips": {
+        "label": []
+    },
+    "flow-h6": {
+        "label": []
+    },
+    "flow-form-markdown": {
+        "label": []
+    }
+}
