@@ -718,16 +718,21 @@ exports.init = (_, _renderers) ->
   setupMenus = ->
     _.requestModelBuilders (error, builders) ->
       # _menus initializeMenus if error then [] else builders
-      menus1 = initializeMenus if error then [] else builders
-      menus2 = flow.l['menu']
-      for v, i in menus1
-        if menus2[i]['label'][1] != ''
-          v['label'] = menus2[i]['label'][1]
-        items = v['items']
-        for v1, i1 in items
-          if menus2[i]['items'][i1]['label'][1] != ''
-            v1['label'] = menus2[i]['items'][i1]['label'][1]
-      _menus menus1
+      console.log(_menus)
+      if flow.l
+        menus1 = initializeMenus if error then [] else builders
+        menus2 = flow.l['menu']
+        for v, i in menus1
+          if menus2[i]['label'][1] != ''
+            v['label'] = menus2[i]['label'][1]
+          items = v['items']
+          for v1, i1 in items
+            if menus2[i]['items'][i1]['label'][1] != ''
+              if v1['label']
+                v1['label'] = menus2[i]['items'][i1]['label'][1]
+        _menus menus1
+      else
+        _menus initializeMenus if error then [] else builders
 
   createTool = (icon, label, action, isDisabled=no) ->
     label: label

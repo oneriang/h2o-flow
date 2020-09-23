@@ -9,7 +9,9 @@ require('../vendor/bootstrap-growl/jquery.bootstrap-growl.js')
 
 require('jquery-textrange/jquery-textrange')
 
-userLang = navigator.language || navigator.userLanguage; 
+userLang = navigator.language || navigator.userLanguage;
+if userLang == 'zh-CN'
+    userLang = 'zh'
 if userLang
     try
         lang = require('./locales/' + userLang + '.json');
