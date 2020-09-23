@@ -10,7 +10,7 @@
     "build": "webpack --mode production",
     "clean": "rm -r build",
     "watch": "webpack --watch --mode development",
-    "start": "webpack-dev-server --open --mode development",
+    "start": "webpack-dev-server --host 0.0.0.0 --mode development",
     "test-raw": "coffee test/unit.tests.coffee -s",
     "test": "coffee test/unit.tests.coffee -s | faucet",
     "headless": "coffee test/headless-test.coffee --host localhost:8080 --packs test-small",

@@ -11,7 +11,10 @@ require('jquery-textrange/jquery-textrange')
 
 userLang = navigator.language || navigator.userLanguage; 
 if userLang
-    lang = require('./locales/' + userLang + '.json');
+    try
+        lang = require('./locales/' + userLang + '.json');
+    catch ex 
+        console.log(ex);
 
 # Start Flow
 require('./core/flow')

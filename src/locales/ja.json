@@ -1539,7 +1539,7 @@
             ],
             [
                 "blockquote",
-                "Your H<sub>2</sub>O could has no models.",
+                "Your H<sub>2</sub>O cloud has no models.",
                 "你的H<sub>2</sub>O云没有模型。"
             ],
             [
@@ -2035,8 +2035,8 @@
             ],
             [
                 "blockquote",
-                "Your H<sub>2</sub>O could has no jobs.",
-                "你的H<sub>2</sub>O可能没有作业。"
+                "Your H<sub>2</sub>O cloud has no jobs.",
+                "你的H<sub>2</sub>O云没有作业。"
             ],
             [
                 "th",
@@ -2352,8 +2352,8 @@
             ],
             [
                 "blockquote",
-                "Your H<sub>2</sub>O could has no frames.",
-                "你的H<sub>2</sub>O可能没有帧。"
+                "Your H<sub>2</sub>O cloud has no frames.",
+                "你的H<sub>2</sub>O云没有帧。"
             ],
             [
                 "h3",
@@ -2641,8 +2641,8 @@
             ],
             [
                 "blockquote",
-                "Your H<sub>2</sub>O could has no grid search results.",
-                "你的H<sub>2</sub>O可能没有网格搜索结果。"
+                "Your H<sub>2</sub>O cloud has no grid search results.",
+                "你的H<sub>2</sub>O云没有网格搜索结果。"
             ],
             [
                 "th",
@@ -2933,8 +2933,8 @@
             ],
             [
                 "blockquote",
-                "Your H<sub>2</sub>O could has no predictions.",
-                "你的H<sub>2</sub>O可能没有预测。"
+                "Your H<sub>2</sub>O cloud has no predictions.",
+                "你的H<sub>2</sub>O云没有预测。"
             ],
             [
                 "th",
